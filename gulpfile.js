@@ -12,5 +12,9 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    mix.copy('node_modules/material-design-lite/material.js', 'public/js/material.js');
+});
+
+elixir(function(mix) {
     mix.sass('app.scss');
 });
