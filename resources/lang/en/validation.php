@@ -94,8 +94,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'repo-url' => [
+            'unique' => 'This :attribute has already been submitted.',
         ],
     ],
 
