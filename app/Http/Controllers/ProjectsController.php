@@ -48,6 +48,7 @@ class ProjectsController extends Controller
 
     	$project = new Project([
     		'title' 		=> $request->input('project-title'),
+    		'slug' 			=> str_slug($request->input('project-title')),
     		'project_url' 	=> $request->input('project-url'),
     		'repo_url' 		=> $request->input('repo-url'),
     		'packagist_url'	=> $request->input('packagist-url'),

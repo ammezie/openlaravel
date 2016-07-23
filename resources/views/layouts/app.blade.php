@@ -38,7 +38,7 @@
 <body>
   <header class="header">
     <div class="logo">
-      <a class="" href="">
+      <a class="" href="/">
         <img src="images/logo.png" height="100px">
       </a>
     </div>
@@ -60,11 +60,9 @@
 
   <main class="section">
     <div class="container">
-      {{-- @include('partials.filters') --}}
 
       @yield('content')
 
-      {{-- @include('partials.pagination') --}}
     </div>
   </main>
 

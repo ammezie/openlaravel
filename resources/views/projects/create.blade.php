@@ -5,7 +5,7 @@
 <div class="columns">
 	<div class="column is-8 is-offset-2">
 		@include('includes.flash')
-		
+
 		<h2 class="title">Submit Project</h2>
 
 		<form action="{{ url('submit-project') }}" method="POST">
@@ -90,6 +90,9 @@
 	  				class="textarea{{ $errors->has('project-description') ? ' is-danger' : '' }}"
 					name="project-description"
 	  				placeholder="A repository of open source projects built using Laravel">{{ old('project-description') }}</textarea>
+	  				<span class="help is-info">
+	  					One sentence description about the project.
+	  				</span>
 
 	  			@if ($errors->has('project-description'))
 	  				<span class="help is-danger">
