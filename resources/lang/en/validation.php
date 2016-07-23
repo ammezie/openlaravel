@@ -110,6 +110,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'project-title'         => 'Project Title',
+        'project-url'           => 'Project URL',
+        'repo-url'              => 'Repository URL',
+        'packagist-url'         => 'Packagist URL',
+        'project-description'   => 'Project Description',
+    ],
 
 ];
