@@ -5,9 +5,10 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bulma": "^0.1.0",
     "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
     "laravel-elixir": "^5.0.0",
-    "material-design-lite": "^1.1.3"
   },
   "dependencies": {}
 }
