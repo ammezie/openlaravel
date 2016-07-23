@@ -60,11 +60,11 @@
 
   <main class="section">
     <div class="container">
-      @include('partials.filters')
+      {{-- @include('partials.filters') --}}
 
       @yield('content')
 
-      @include('partials.pagination')
+      {{-- @include('partials.pagination') --}}
     </div>
   </main>
 
@@ -78,7 +78,8 @@
       
     </div>
   </footer>
-    
+  
+  <script src="js/vendor.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

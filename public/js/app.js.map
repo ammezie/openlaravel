@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA","file":"app.js","sourcesContent":[""],"sourceRoot":"/source/"}
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;AACA;AACA","file":"app.js","sourcesContent":["$(function() {\n\t$('div.notification').delay(5000).fadeOut(350);\n});"],"sourceRoot":"/source/"}
