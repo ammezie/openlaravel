@@ -59,4 +59,11 @@ class ProjectsController extends Controller
 
     	return back()->with('message', 'Your submission has been made! Please give us some time to review your submission.');
     }
+
+    public function show($slug)
+    {
+    	$project = Project::where('slug', $slug)->firstOrFail();
+
+    	return view('projects.show', compact('project'));
+    }
 }

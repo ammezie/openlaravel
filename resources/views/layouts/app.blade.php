@@ -12,7 +12,7 @@
 
   {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> --}}
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <style>
     .card-header-title {
       justify-content: center;
@@ -39,7 +39,7 @@
   <header class="header">
     <div class="logo">
       <a class="" href="/">
-        <img src="images/logo.png" height="100px">
+        <img src="{{ asset('images/logo.png') }}" height="100px">
       </a>
     </div>
   </header>
@@ -77,7 +77,7 @@
     </div>
   </footer>
   
-  <script src="js/vendor.js"></script>
-  <script src="js/app.js"></script>
+  <script src="{{ asset('js/vendor.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}></script>
 </body>
 </html>

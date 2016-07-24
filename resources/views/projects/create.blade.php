@@ -65,7 +65,7 @@
                 @endif
 			</p>
 
-			<label class="label" for="packagist-url">
+			{{-- <label class="label" for="packagist-url">
 				Packagist URL
 			</label>
 			<p class="control">
@@ -81,7 +81,7 @@
 	  					{{ $errors->first('packagist-url') }}
 	  				</span>
                 @endif
-			</p>
+			</p> --}}
 			<label class="label" for="project-description">
 				Project Description <span class="required">*</span>
 			</label>
