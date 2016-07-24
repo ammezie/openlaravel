@@ -51,7 +51,7 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
     	$this->validate($request, [
-    		'project-title' 		=> 'required',
+    		'project-title' 		=> 'required|unique:projects,title',
     		'project-url'			=> 'url',
     		'repo-url'				=> 'required|url|unique:projects,repo_url',
     		'packagist-url'			=> 'url',
