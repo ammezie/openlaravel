@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('repo_url')->unique();
             $table->string('packagist_url')->nullable();
             $table->text('description');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
