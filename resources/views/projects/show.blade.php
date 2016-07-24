@@ -9,14 +9,18 @@
 				{{ $project->title }}
 			</h2>
 
+			<hr>
+
 			<p>
 				{{ $project->description }}
 			</p>
 
 			<div class="section has-text-centered">
+			@if ($project->project_url)
 				<a class="button is-secondary" href="{{ url($project->project_url) }}">
 					Project Home
 				</a>
+			@endif
 				<a class="button is-secondary" href="{{ url($project->repo_url) }}">
 					Project Repository
 				</a>
