@@ -27,9 +27,10 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-    	$projects = $this->project->getAll();
+    	return $this->project->getAll();
 
-    	return view('projects.index', compact('projects'));
+    	// return view('projects.index', compact('projects'));
+    	// return $projects;
     }
 
     /**

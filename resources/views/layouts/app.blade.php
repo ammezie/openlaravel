@@ -35,7 +35,7 @@
     }
   </style>
 </head>
-<body>
+<body id="app">
   <header class="header">
     <div class="logo">
       <a class="" href="/">
@@ -58,7 +58,7 @@
     </div>
   </section>
 
-  <main class="section">
+  <main id="project" class="section">
     <div class="container">
 
       @yield('content')
@@ -77,7 +77,7 @@
     </div>
   </footer>
   
-  <script src="{{ asset('js/vendor.js') }}"></script>
+  {{-- <script src="{{ asset('js/vendor.js') }}"></script> --}}
   <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

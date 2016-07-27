@@ -4,24 +4,25 @@
 
 @include('partials.filters')
 
-<div class="columns is-multiline">
-	@foreach ($projects as $project)
-	<div class="column is-one-third">
-      <div class="card is-fullwidth">
-        <a href="{{ url('projects/' . $project->slug) }}">
-        <div class="card-content has-text-centered">
-          <div class="content">
-          <h3 class="title">
-            {{ $project->title }}
-          </h3>
-            {{ $project->description }}
-          </div>
-        </div>
+<project>
+	<div class="column is-one-third" v-for="project in projects">
+      {{-- <div class="card is-fullwidth">
+        <a href="projects/@{{ project.slug }}">
+	        <div class="card-content has-text-centered">
+	          <div class="content">
+		        <h3 class="title">
+		        	@{{ project.title }}
+		        </h3>
+
+		        <small>@{{ project.slug }}</small>
+
+	          	@{{ project.description }}
+	          </div>
+	        </div>
         </a>
-      </div>
+      </div> --}}
     </div>
-    @endforeach
-</div>
+</project>
 
 {{-- @include('partials.pagination') --}}
 
