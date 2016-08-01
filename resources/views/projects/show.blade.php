@@ -9,8 +9,6 @@
 				{{ $project->title }}
 			</h2>
 
-			<hr>
-
 			<p>
 				{{ $project->description }}
 			</p>
@@ -31,6 +29,10 @@
 	<aside class="column is-4">
 		<div class="content">
 			<h2 class="title">Stats</h2>
+
+			<p>
+				This project was added {{ $project->created_at->diffForHumans() }}
+			</p>
 
 	</aside>
 </div>

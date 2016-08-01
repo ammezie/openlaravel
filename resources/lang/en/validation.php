@@ -94,7 +94,7 @@ return [
     */
 
     'custom' => [
-        'repo-url' => [
+        'repo_url' => [
             'unique' => 'This :attribute has already been submitted.',
         ],
     ],
@@ -111,11 +111,10 @@ return [
     */
 
     'attributes' => [
-        'project-title'         => 'Project Title',
-        'project-url'           => 'Project URL',
-        'repo-url'              => 'Repository URL',
-        'packagist-url'         => 'Packagist URL',
-        'project-description'   => 'Project Description',
+        'title'         => 'Project Title',
+        'url'           => 'Project URL',
+        'repo_url'      => 'Repository URL',
+        'description'   => 'Project Description',
     ],
 
 ];

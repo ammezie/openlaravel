@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta id="token" name="token" value="{{ csrf_token() }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A repository of open source Laravel projects.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -10,32 +11,12 @@
 
   {{-- <link rel="shortcut icon" href="images/favicon.png"> --}}
 
-  {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> --}}
+  <script src="https://use.fontawesome.com/bd782fff25.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <style>
-    .card-header-title {
-      justify-content: center;
-      color: #00b0db;
-      /*font-weight: normal;*/
-    }
-    .card-content {
-      padding: 50px;
-    }
-    .card-content .title {
-      color: #00b0db;
-    }
-    .logo {
-      align-items: stretch;
-      display: flex;
-      justify-content: center;
-    }
-    .hero.is-primary .subtitle {
-      color: #fff;
-    }
-  </style>
 </head>
-<body id="app">
+<body>
   <header class="header">
     <div class="logo">
       <a class="" href="/">
@@ -70,7 +51,18 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
+          <a href="https://github.com/ammezie/openlaravel">
+            <i class="fa fa-github"></i>
+          </a>
+          <a href="https://twitter.com/openlaravel">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </p>
+        <p>
           <a href="https://github.com/ammezie/openlaravel">OpenLaravel</a> itself is an open source project built using <a href="https://laravel.com">Laravel</a>. Pull requests are greatly welcomed!
+        </p>
+        <p>
+          Proudly hosted with <a href="https://m.do.co/c/98e35d32e849">DigitalOcean</a>.
         </p>
       </div>
       

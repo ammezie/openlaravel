@@ -5,103 +5,83 @@
 <div class="columns">
 	<div class="column is-8 is-offset-2">
 		@include('includes.flash')
+		<div class="notification is-success" v-if="formSubmitted">
+	        Your submission has been made! Please give us some time to review your submission.
+	    </div>
 
 		<h2 class="title">Submit Project</h2>
 
-		<form action="{{ url('submit-project') }}" method="POST">
-			{{ csrf_field() }}
-
-			<label class="label" for="project-title">
+		<form method="POST" @submit.prevent="createProject">
+			<label class="label" for="title">
 				Project Title <span class="required">*</span>
 			</label>
 			<p class="control">
 	  			<input
-	  				class="input{{ $errors->has('project-title') ? ' is-danger' : '' }}"
+	  				class="input@{{ errors.title ? ' is-danger' : '' }}"
 	  				type="text"
-	  				name="project-title"
-	  				value="{{ old('project-title') }}"
-	  				placeholder="Open Laravel">
+	  				name="title"
+	  				value="{{ old('title') }}"
+	  				placeholder="Open Laravel"
+	  				v-model="newProject.title">
 
-	  			@if ($errors->has('project-title'))
-	  				<span class="help is-danger">
-	  					{{ $errors->first('project-title') }}
-	  				</span>
-                @endif
+	  			<form-error v-if="errors.title" :errors="errors">
+	  				@{{ errors.title }}
+	  			</form-error>
 			</p>
 
-			<label class="label" for="project-url">
+			<label class="label" for="url">
 				Project URL
 			</label>
 			<p class="control">
 	  			<input
-	  				class="input{{ $errors->has('project-url') ? ' is-danger' : '' }}"
+	  				class="input@{{ errors.url ? ' is-danger' : '' }}"
 	  				type="text"
-	  				name="project-url"
-	  				value="{{ old('project-url') }}"
-	  				placeholder="http://openlaravel.com">
+	  				name="url"
+	  				value="{{ old('url') }}"
+	  				placeholder="http://openlaravel.com"
+	  				v-model="newProject.url">
 
-	  			@if ($errors->has('project-url'))
-	  				<span class="help is-danger">
-	  					{{ $errors->first('project-url') }}
-	  				</span>
-                @endif
+	  			<form-error v-if="errors.url" :errors="errors">
+	  				@{{ errors.url }}
+	  			</form-error>
 			</p>
 
-			<label class="label" for="repo-url">
+			<label class="label" for="repo_url">
 				Source Repository URL <span class="required">*</span>
 			</label>
 			<p class="control">
 	  			<input
-	  				class="input{{ $errors->has('repo-url') ? ' is-danger' : '' }}"
+	  				class="input@{{ errors.repo_url ? ' is-danger' : '' }}"
 	  				type="text"
-	  				name="repo-url"
-	  				value="{{ old('repo-url') }}"
-	  				placeholder="https://github.com/ammezie/openlaravel">
+	  				name="repo_url"
+	  				value="{{ old('repo_url') }}"
+	  				placeholder="https://github.com/ammezie/openlaravel"
+	  				v-model="newProject.repo_url">
 
-	  			@if ($errors->has('repo-url'))
-	  				<span class="help is-danger">
-	  					{{ $errors->first('repo-url') }}
-	  				</span>
-                @endif
+	  			<form-error v-if="errors.repo_url" :errors="errors">
+	  				@{{ errors.repo_url }}
+	  			</form-error>
 			</p>
 
-			{{-- <label class="label" for="packagist-url">
-				Packagist URL
-			</label>
-			<p class="control">
-	  			<input
-	  				class="input{{ $errors->has('packagist-url') ? ' is-danger' : '' }}"
-	  				type="text"
-	  				name="packagist-url"
-	  				value="{{ old('packagist-url') }}"
-	  				placeholder="https://packagist.org/packages/mezie/openlaravel">
-
-	  			@if ($errors->has('packagist-url'))
-	  				<span class="help is-danger">
-	  					{{ $errors->first('packagist-url') }}
-	  				</span>
-                @endif
-			</p> --}}
-			<label class="label" for="project-description">
+			<label class="label" for="description">
 				Project Description <span class="required">*</span>
 			</label>
 	  		<p class="control">
 	  			<textarea
-	  				class="textarea{{ $errors->has('project-description') ? ' is-danger' : '' }}"
-					name="project-description"
-	  				placeholder="A repository of open source projects built using Laravel">{{ old('project-description') }}</textarea>
+	  				class="textarea@{{ errors.description ? ' is-danger' : '' }}"
+					name="description"
+	  				placeholder="A repository of open source projects built using Laravel"
+	  				v-model="newProject.description">{{ old('description') }}</textarea>
 	  				<span class="help is-info">
 	  					One sentence description about the project.
 	  				</span>
 
-	  			@if ($errors->has('project-description'))
-	  				<span class="help is-danger">
-	  					{{ $errors->first('project-description') }}
-	  				</span>
-                @endif
+	  			<form-error v-if="errors.description" :errors="errors">
+	  				@{{ errors.description }}
+	  			</form-error>
 			</p>
 
-			<p class="control">
+			<p class="control" v-if="! formSubmitted">
 			  <button class="button is-primary is-medium">Submit Project</button>
 			</p>
 		</form>

@@ -1,15 +1,23 @@
 <?php
 
-Route::get('/', function() {
-	return view('projects.index');
-});
+/*
+|---------------------------------------------------------------------------
+| Web Routes
+|---------------------------------------------------------------------------
+*/
+Route::get('/', 'ProjectsController@index');
 
-// Route::get('submit-project', 'ProjectsController@create');
-// Route::post('submit-project', 'ProjectsController@store');
+Route::get('submit-project', 'ProjectsController@create');
+Route::post('submit-project', 'ProjectsController@store');
 Route::get('projects/{slug}', 'ProjectsController@show');
 
-Route::group(['prefix' => 'api'], function() {
+/*
+|---------------------------------------------------------------------------
+| API Routes
+|---------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'api', 'namespace' => 'API'], function() {
     Route::get('projects', 'ProjectsController@index');
-    Route::get('submit-project', 'ProjectsController@create');
-	Route::post('submit-project', 'ProjectsController@store');
+    // Route::get('submit-project', 'ProjectsController@create');
+	Route::post('projects', 'ProjectsController@store');
 });

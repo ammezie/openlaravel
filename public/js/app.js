@@ -11845,46 +11845,129 @@ var _Project = require('./components/Project.vue');
 
 var _Project2 = _interopRequireDefault(_Project);
 
+var _FormError = require('./components/FormError.vue');
+
+var _FormError2 = _interopRequireDefault(_FormError);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.use(_vueResource2.default); // $(function() {
-// 	$('div.notification').delay(5000).fadeOut(350);
-// });
+// import VuePaginator from 'vuejs-paginator/dist/vuejs-paginator.min.js';
+
+_vue2.default.use(_vueResource2.default);
+
+_vue2.default.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
 
 new _vue2.default({
-	el: '#app',
+	el: '#project',
 
-	data: {
-		projects: []
+	components: {
+		Project: _Project2.default,
+		FormError: _FormError2.default
 	},
 
-	components: { Project: _Project2.default },
+	data: {
+		projects: [],
+
+		newProject: {
+			title: '',
+			url: '',
+			repo_url: '',
+			description: ''
+		},
+
+		formSubmitted: false,
+
+		errors: []
+	},
 
 	ready: function ready() {
 		this.fetchProjects();
-		// alert('Ready to go');
 	},
 
 	methods: {
-		fetchProjects: function fetchProjects() {
-			this.$http.get('api/projects').then(function (projects) {
-				this.$set('projects', projects.data);
+		fetchProjects: function fetchProjects(page_url) {
+			page_url = page_url || '/api/projects';
+
+			this.$http.get(page_url).then(function (response) {
+				this.$set('projects', response.data);
+				// this.makePagination(response.data);
+			});
+		},
+
+
+		// makePagination(data) {
+		// 	let pagination = {
+		// 		current_page: data.current_page,
+		// 		last_page: data.last_page,
+		// 		next_page_url: data.next_page_url,
+		// 		prev_page_url: data.prev_page_url
+		// 	}
+
+		// 	this.$set('pagination', pagination);
+		// },
+
+		createProject: function createProject() {
+			var project = this.newProject;
+
+			this.projects.push(project);
+
+			this.newProject = {
+				title: '',
+				projectUrl: '',
+				repoUrl: '',
+				description: ''
+			};
+
+			this.$http.post('api/projects', project).then(function (response) {
+				this.formSubmitted = true;
+			}, function (response) {
+				this.$set('errors', response.data);
 			});
 		}
 	}
 });
 
-},{"./components/Project.vue":7,"vue":4,"vue-resource":3}],7:[function(require,module,exports){
-var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n")
-"use strict";
+},{"./components/FormError.vue":7,"./components/Project.vue":8,"vue":4,"vue-resource":3}],7:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.default = {};
+exports.default = {
+	props: ['errors']
+};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"columns is-multiline\">\n\t<div class=\"column is-one-third\">\n      <div class=\"card is-fullwidth\">\n        <a href=\"projects/{{ project.slug }}\">\n\t        <div class=\"card-content has-text-centered\">\n\t          <div class=\"content\">\n\t\t        <h3 class=\"title\">\n\t\t        \t{{ project.title }}\n\t\t        </h3>\n\n\t\t        <small>{{ project.slug }}</small>\n\n\t          \t{{ project.description }}\n\t          </div>\n\t        </div>\n        </a>\n      </div>\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<span class=\"help is-danger\">\n\t<slot></slot>\n</span>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-041a0b82", module.exports)
+  } else {
+    hotAPI.update("_v-041a0b82", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+	// data() {
+	// 	return {
+	// 		projects: []
+	// 	}
+	// },
+
+	props: ['project']
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"column is-one-third\">\n      <div class=\"card is-fullwidth\">\n        <a href=\"projects/{{ project.slug }}\">\n\t        <div class=\"card-content has-text-centered\">\n\t          <div class=\"content\">\n\t\t        <h3 class=\"title\">\n\t\t        \t{{ project.title }}\n\t\t        </h3>\n\n\t          \t{{ project.description }}\n\t          </div>\n\t        </div>\n        </a>\n      </div>\n    </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

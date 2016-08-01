@@ -27,10 +27,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-    	return $this->project->getAll();
 
-    	// return view('projects.index', compact('projects'));
-    	// return $projects;
+    	return view('projects.index', compact('projects'));
     }
 
     /**
@@ -55,7 +53,6 @@ class ProjectsController extends Controller
     		'project-title' 		=> 'required|unique:projects,title',
     		'project-url'			=> 'url',
     		'repo-url'				=> 'required|url|unique:projects,repo_url',
-    		'packagist-url'			=> 'url',
     		'project-description' 	=> 'required'
     	]);
 

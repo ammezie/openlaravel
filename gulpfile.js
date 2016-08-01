@@ -3,9 +3,10 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-vueify');
 
 elixir(function(mix) {
-    mix.copy('node_modules/bulma/sass', 'resources/assets/sass')
-    	.copy('node_modules/vue/dist/vue.js', 'resources/assets/js/vendor/vue.js')
-    	.copy('node_modules/vue-resource/dist/vue-resource.js', 'resources/assets/js/vendor/vue-resource.js');
+    mix.copy('node_modules/bulma/sass', 'resources/assets/sass/bulma')
+    	// .copy('node_modules/bulma/bulma.sass', 'resources/assets/sass/bulma');
+    	// .copy('node_modules/vue/dist/vue.js', 'resources/assets/js/vendor/vue.js')
+    	// .copy('node_modules/vue-resource/dist/vue-resource.js', 'resources/assets/js/vendor/vue-resource.js');
 
 });
 

@@ -184,7 +184,7 @@ a {
   text-decoration: none;
   transition: none 86ms ease-out; }
   a:hover {
-    color: #222324; }
+    color: #ff8717; }
 
 code {
   background-color: #fff;
@@ -569,7 +569,7 @@ a.box:active {
     margin-left: 4px;
     margin-right: -2px; }
   .button:hover, .button:focus, .button.is-active {
-    color: #222324; }
+    color: #ff8717; }
   .button:active {
     box-shadow: inset 0 1px 2px rgba(17, 17, 17, 0.2); }
   .button.is-white {
@@ -1054,7 +1054,7 @@ a.box:active {
   .checkbox input, .radio input {
     cursor: pointer; }
   .checkbox:hover, .radio:hover {
-    color: #222324; }
+    color: #ff8717; }
   .is-disabled.checkbox, .is-disabled.radio {
     color: #aeb1b5;
     pointer-events: none; }
@@ -1154,7 +1154,7 @@ a.box:active {
     right: 16px;
     top: 50%; }
   .select:hover:after {
-    border-color: #222324; }
+    border-color: #ff8717; }
   .select.is-small {
     height: 24px; }
     .select.is-small select {
@@ -3227,7 +3227,7 @@ a.nav-item {
   color: #69707a; }
   .nav-item a:hover,
   a.nav-item:hover {
-    color: #222324; }
+    color: #ff8717; }
   .nav-item a.is-active,
   a.nav-item.is-active {
     color: #222324; }
@@ -4169,5 +4169,47 @@ a.panel-block:hover {
       border-bottom: 1px solid #d3d6db; }
       .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
         border-bottom-color: #098cd2; }
+
+span.required {
+  color: #ed6c63; }
+
+.title,
+.subtitle {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d3d6db; }
+
+.card {
+  height: 200px; }
+
+.card-content {
+  padding: 50px; }
+  .card-content .title {
+    color: #00b0db;
+    border: none; }
+
+.footer {
+  background-color: #0089a9;
+  color: #ffffff;
+  padding-bottom: 40px; }
+  .footer a, .footer a:visited {
+    color: #ffffff !important; }
+    .footer a:hover, .footer a:visited:hover {
+      color: #ff8717; }
+    .footer a:not(.icon), .footer a:visited:not(.icon) {
+      border-bottom: 1px solid #ff8717; }
+      .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
+        background-color: #ff8717; }
+
+.logo {
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.hero.is-primary .subtitle {
+  color: #fff;
+  border: none; }
 
 /*# sourceMappingURL=app.css.map */
