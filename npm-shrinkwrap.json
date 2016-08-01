@@ -5598,6 +5598,18 @@
         }
       }
     },
+    "vuetable": {
+      "version": "1.2.0",
+      "from": "vuetable@latest",
+      "resolved": "https://registry.npmjs.org/vuetable/-/vuetable-1.2.0.tgz",
+      "dependencies": {
+        "vue-resource": {
+          "version": "0.7.4",
+          "from": "vue-resource@>=0.7.0 <0.8.0",
+          "resolved": "https://registry.npmjs.org/vue-resource/-/vue-resource-0.7.4.tgz"
+        }
+      }
+    },
     "watchify": {
       "version": "3.7.0",
       "from": "watchify@>=3.2.3 <4.0.0",

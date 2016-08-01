@@ -1,17 +1,19 @@
 <template>
 	<div class="column is-one-third">
       <div class="card is-fullwidth">
-        <a href="projects/{{ project.slug }}">
-	        <div class="card-content has-text-centered">
-	          <div class="content">
+	    <div class="card-content has-text-centered">
+	        <div class="content">
 		        <h3 class="title">
-		        	{{ project.title }}
+		        	<a href="projects/{{ project.slug }}">
+		        		{{ project.title }}
+		        	</a>
 		        </h3>
 
-	          	{{ project.description }}
-	          </div>
-	        </div>
-        </a>
+		        <a href="projects/{{ project.slug }}">
+	          		{{ project.description }}
+	          	</a>
+          </div>
+	    </div>
       </div>
     </div>
 </template>

@@ -11967,7 +11967,7 @@ exports.default = {
 
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"column is-one-third\">\n      <div class=\"card is-fullwidth\">\n        <a href=\"projects/{{ project.slug }}\">\n\t        <div class=\"card-content has-text-centered\">\n\t          <div class=\"content\">\n\t\t        <h3 class=\"title\">\n\t\t        \t{{ project.title }}\n\t\t        </h3>\n\n\t          \t{{ project.description }}\n\t          </div>\n\t        </div>\n        </a>\n      </div>\n    </div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"column is-one-third\">\n      <div class=\"card is-fullwidth\">\n\t    <div class=\"card-content has-text-centered\">\n\t        <div class=\"content\">\n\t\t        <h3 class=\"title\">\n\t\t        \t<a href=\"projects/{{ project.slug }}\">\n\t\t        \t\t{{ project.title }}\n\t\t        \t</a>\n\t\t        </h3>\n\n\t\t        <a href=\"projects/{{ project.slug }}\">\n\t          \t\t{{ project.description }}\n\t          \t</a>\n          </div>\n\t    </div>\n      </div>\n    </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
