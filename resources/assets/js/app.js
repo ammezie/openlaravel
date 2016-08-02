@@ -6,6 +6,11 @@ Vue.use(VueResource);
 
 import Project from './components/Project.vue';
 import FormError from './components/FormError.vue';
+import Vuetable from 'vuetable/src/components/Vuetable.vue';
+import VuetablePagination from 'vuetable/src/components/VuetablePagination.vue';
+
+Vue.component('vuetable', Vuetable);
+Vue.component('vuetable-pagination', VuetablePagination);
 
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
 
@@ -15,6 +20,7 @@ new Vue({
 	components: {
 		Project,
 		FormError,
+		// vuetable: Vuetable,
 	},
 
 	data: {
@@ -30,6 +36,19 @@ new Vue({
 		formSubmitted: false,
 
 		errors: [],
+
+		columns: [
+            'title',
+            'project_url',
+            'repo_url',
+            'description',
+            'status',
+            '__actions'
+        ],
+
+         itemActions: [
+            { name: 'approve-project', label: '', icon: 'zoom icon', class: 'ui teal button' },
+        ]
 	},
 
 	ready: function() {
@@ -74,6 +93,22 @@ new Vue({
 			}, function (response) {
 				this.$set('errors', response.data);
 			});
-		}
-	}
+		},
+
+		approveProject: function(id) {
+            console.log('view profile with id:', id);
+        },
+	},
+
+	events: {
+        'vuetable:action': function(action, data) {
+            console.log('vuetable:action', action, data)
+            if (action == 'approve-project') {
+                this.approveProject(data.id)
+            }
+        },
+        'vuetable:load-error': function(response) {
+            console.log('Load Error: ', response)
+        }
+    }
 });

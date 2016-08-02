@@ -19,7 +19,7 @@
 <body>
   <header class="header">
     <div class="logo">
-      <a class="" href="/">
+      <a class="" href="{{ url('/') }}">
         <img src="{{ asset('images/logo.png') }}" height="100px">
       </a>
     </div>
@@ -52,10 +52,14 @@
       <div class="content has-text-centered">
         <p>
           <a href="https://github.com/ammezie/openlaravel">
-            <i class="fa fa-github"></i>
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
           </a>
           <a href="https://twitter.com/openlaravel">
-            <i class="fa fa-twitter"></i>
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
           </a>
         </p>
         <p>

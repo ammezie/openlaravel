@@ -12,7 +12,17 @@ class ProjectRepository {
 	 */
 	public function getAll()
 	{
-		return Project::orderBy('id', 'desc')->get();
+		return Project::orderBy('id', 'desc')->paginate(1);
+	}
+
+	/**
+	 * get projects in descending order
+	 */
+	public function get()
+	{
+		return Project::where('status', 1)
+						->orderBy('id', 'desc')
+						->get();
 	}
 
 	/**

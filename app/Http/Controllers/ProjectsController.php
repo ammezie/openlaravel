@@ -27,8 +27,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-
-    	return view('projects.index', compact('projects'));
+    	return view('projects.index');
     }
 
     /**

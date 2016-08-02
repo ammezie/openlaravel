@@ -27,7 +27,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-    	$projects =  $this->project->getAll();
+    	$projects =  $this->project->get();
 
     	return $projects;
     }
