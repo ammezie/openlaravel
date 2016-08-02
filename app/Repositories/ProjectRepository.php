@@ -44,4 +44,9 @@ class ProjectRepository {
 	{
 		return Project::where('slug', $slug)->firstOrFail();
 	}
+
+	public function approve()
+	{
+		
+	}
 }
