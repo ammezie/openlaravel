@@ -12731,9 +12731,30 @@ new _vue2.default({
 
 		errors: [],
 
-		columns: ['title', 'project_url', 'repo_url', 'description', 'status', '__actions'],
+		columns: [{
+			name: 'title',
+			title: 'Project Title'
 
-		itemActions: [{ name: 'approve-project', label: '', icon: 'zoom icon', class: 'ui teal button' }]
+		}, {
+			name: 'project_url',
+			title: 'Project URL'
+		}, {
+			name: 'repo_url',
+			title: 'Repository URL'
+		}, {
+			name: 'description',
+			title: 'Project Description'
+		}, {
+			name: 'status',
+			title: 'Status'
+		}, '__actions'],
+
+		itemActions: [{
+			name: 'approve-project',
+			label: '',
+			icon: 'fa fa-thumbs-up',
+			class: 'button is_primary'
+		}]
 	},
 
 	ready: function ready() {
@@ -12782,21 +12803,19 @@ new _vue2.default({
 		},
 
 
-		approveProject: function approveProject(id) {
-			console.log('view profile with id:', id);
+		approveProject: function approveProject(project) {
+			this.$http.patch('api/admin/approve-project/' + project.slug, project);
 		}
 	},
 
 	events: {
-		'vuetable:action': function vuetableAction(action, data) {
-			console.log('vuetable:action', action, data);
+		'vuetable:action': function vuetableAction(action, project) {
 			if (action == 'approve-project') {
-				this.approveProject(data.id);
+				this.approveProject(project);
 			}
 		},
-		'vuetable:load-error': function vuetableLoadError(response) {
-			console.log('Load Error: ', response);
-		}
+
+		'vuetable:reload': function vuetableReload() {}
 	}
 });
 

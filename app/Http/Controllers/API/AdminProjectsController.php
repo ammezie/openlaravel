@@ -31,4 +31,9 @@ class AdminProjectsController extends Controller
 
 		return $projects;
 	}
+
+	public function approveProject($slug)
+	{
+		return $this->project->approve($slug);
+	}
 }

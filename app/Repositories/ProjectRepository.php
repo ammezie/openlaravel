@@ -12,7 +12,7 @@ class ProjectRepository {
 	 */
 	public function getAll()
 	{
-		return Project::orderBy('id', 'desc')->paginate(1);
+		return Project::orderBy('id', 'desc')->paginate(20);
 	}
 
 	/**
@@ -27,7 +27,7 @@ class ProjectRepository {
 
 	/**
 	 * Create a new project
-	 * 
+	 *
 	 * @param  Project $project
 	 */
 	public function store($project)
@@ -37,7 +37,7 @@ class ProjectRepository {
 
 	/**
 	 * Show a specified project
-	 * 
+	 *
 	 * @param  Project $slug
 	 */
 	public function show($slug)
@@ -45,8 +45,9 @@ class ProjectRepository {
 		return Project::where('slug', $slug)->firstOrFail();
 	}
 
-	public function approve()
+	public function approve($slug)
 	{
-		
+		return Project::where('slug', $slug)
+						->update(['status' => 1]);
 	}
 }

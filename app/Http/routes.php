@@ -26,5 +26,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function() {
 
 	Route::group(['prefix' => 'admin'], function() {
 	    Route::get('projects', 'AdminProjectsController@index');
+	    Route::patch('approve-project/{slug}', 'AdminProjectsController@approveProject');
 	});
 });
