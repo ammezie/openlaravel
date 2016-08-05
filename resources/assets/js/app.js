@@ -121,19 +121,18 @@ new Vue({
 		},
 
 		approveProject: function(project) {
-            this.$http.patch('api/admin/approve-project/'+project.slug, project);
+            this.$http.patch('api/admin/approve-project/'+project.slug, project).then(function() {
+            	// reload data from server
+            	this.$broadcast('vuetable:reload');
+            });
         },
 	},
 
 	events: {
         'vuetable:action': function(action, project) {
             if (action == 'approve-project') {
-                this.approveProject(project)
+                this.approveProject(project);
             }
-        },
-
-        'vuetable:reload': function() {
-
         },
     }
 });

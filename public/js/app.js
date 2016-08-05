@@ -12804,7 +12804,10 @@ new _vue2.default({
 
 
 		approveProject: function approveProject(project) {
-			this.$http.patch('api/admin/approve-project/' + project.slug, project);
+			this.$http.patch('api/admin/approve-project/' + project.slug, project).then(function () {
+				// reload data from server
+				this.$broadcast('vuetable:reload');
+			});
 		}
 	},
 
@@ -12813,9 +12816,7 @@ new _vue2.default({
 			if (action == 'approve-project') {
 				this.approveProject(project);
 			}
-		},
-
-		'vuetable:reload': function vuetableReload() {}
+		}
 	}
 });
 
