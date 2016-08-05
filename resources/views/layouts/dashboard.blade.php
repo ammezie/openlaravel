@@ -49,12 +49,17 @@
       </div>
     </nav>
 
-    <main id="project" class="content">
+    <main id="project" class="">
       <h2 class="title">List of Projects</h2>
 
       <vuetable
           api-url="{{ url('/api/admin/projects') }}"
           :fields="columns"
+          table-class="table is-bordered is-striped is-narrow"
+          pagination-class="columns"
+          pagination-info-class="column has-text-left"
+          pagination-component-class="column"
+          pagination-component="vuetable-pagination-bulma"
           :item-actions="itemActions"
           pagination-path=""
       ></vuetable>

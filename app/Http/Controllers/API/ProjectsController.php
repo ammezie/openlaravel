@@ -27,9 +27,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-    	$projects =  $this->project->get();
-
-    	return $projects;
+    	return  $this->project->get();
     }
 
      /**
@@ -59,4 +57,17 @@ class ProjectsController extends Controller
 
     	return back()->with('message', 'Your submission has been made! Please give us some time to review your submission.');
     }
+
+    /**
+     * Show a specified project
+     * 
+     * @param  Project $slug
+     * @return Response
+     */
+    // public function show($slug)
+    // {
+    //     $project = $this->project->show($slug);
+
+    //     return view('projects.show', compact('project'));
+    // }
 }

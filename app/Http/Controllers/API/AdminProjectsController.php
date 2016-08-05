@@ -16,7 +16,6 @@ class AdminProjectsController extends Controller
 
 	public function __construct(ProjectRepository $project)
 	{
-
 		$this->project = $project;
 	}
 
@@ -32,6 +31,12 @@ class AdminProjectsController extends Controller
 		return $projects;
 	}
 
+	/**
+	 * Approve a particular project
+	 * 
+	 * @param  $slug
+	 * @return Response
+	 */
 	public function approveProject($slug)
 	{
 		return $this->project->approve($slug);

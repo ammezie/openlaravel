@@ -8,9 +8,12 @@ import Project from './components/Project.vue';
 import FormError from './components/FormError.vue';
 import Vuetable from 'vuetable/src/components/Vuetable.vue';
 import VuetablePagination from 'vuetable/src/components/VuetablePagination.vue';
+import VuetablePaginationBulma from './components/VuetablePaginationBulma.vue';
 
-Vue.component('vuetable', Vuetable);
+// Vue.component('vuetable', Vuetable);
 Vue.component('vuetable-pagination', VuetablePagination);
+Vue.component('vuetable-pagination-bulma', VuetablePaginationBulma);
+
 
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
 
@@ -20,6 +23,7 @@ new Vue({
 	components: {
 		Project,
 		FormError,
+		vuetable: Vuetable,
 	},
 
 	data: {
@@ -70,8 +74,8 @@ new Vue({
             {
             	name: 'approve-project',
             	label: '',
-            	icon: 'fa fa-thumbs-up',
-            	class: 'button is_primary'
+            	icon: 'fa fa-thumbs-o-up',
+            	class: 'button is-primary'
             },
         ]
 	},
