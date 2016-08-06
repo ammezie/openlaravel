@@ -55,7 +55,7 @@ class ProjectsController extends Controller
 
     	$this->project->store($project);
 
-    	return back()->with('message', 'Your submission has been made! Please give us some time to review your submission.');
+    	return back()->with('status', 'Your submission has been made! Please give us some time to review your submission.');
     }
 
     /**

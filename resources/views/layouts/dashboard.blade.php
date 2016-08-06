@@ -26,7 +26,7 @@
   <div class="container">
     <nav class="nav">
       <div class="nav-left">
-        <a class="nav-item is-brand" href="{{ url('dashboard') }}">
+        <a class="nav-item is-brand" href="{{ url('/') }}">
           <img src="{{ asset('images/logo.png') }}">
         </a>
       </div>
@@ -39,7 +39,7 @@
 
       <div class="nav-right nav-menu">
         <span class="nav-item">
-          <a class="button is-primary" href="{{ url('dashboard/logout') }}">
+          <a class="button is-primary" href="{{ url('logout') }}">
             <span class="icon">
               <i class="fa fa-sign-out"></i>
             </span>
@@ -55,7 +55,7 @@
       <vuetable
           api-url="{{ url('/api/admin/projects') }}"
           :fields="columns"
-          table-class="table is-bordered is-striped is-narrow"
+          table-class="table is-striped is-narrow"
           pagination-class="columns"
           pagination-info-class="column has-text-left"
           pagination-component-class="column"

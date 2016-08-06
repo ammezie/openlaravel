@@ -1,5 +1,5 @@
-@if (session('message'))
+@if (session('status'))
     <div class="notification is-success">
-        {{ session('message') }}
+        {{ session('status') }}
     </div>
 @endif
