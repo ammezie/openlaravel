@@ -32,6 +32,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 Route::group(['prefix' => 'api', 'namespace' => 'API'], function() {
     Route::get('projects', 'ProjectsController@index');
 	Route::post('projects', 'ProjectsController@store');
+	// Route::get('projects/{slug}', 'ProjectsController@show');
 
 	Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
 	    Route::get('projects', 'AdminProjectsController@index');

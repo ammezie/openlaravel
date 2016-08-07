@@ -4196,9 +4196,13 @@ span.required {
     .footer a:hover, .footer a:visited:hover {
       color: #ff8717; }
     .footer a:not(.icon), .footer a:visited:not(.icon) {
-      border-bottom: 1px solid #ff8717; }
+      border-bottom: 1px dotted #ff8717; }
       .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
         background-color: #ff8717; }
+  .footer a.handle {
+    border-bottom: none; }
+    .footer a.handle:hover {
+      background-color: transparent; }
 
 .logo {
   -ms-flex-align: stretch;

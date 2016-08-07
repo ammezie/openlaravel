@@ -52,12 +52,12 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          <a href="https://github.com/ammezie/openlaravel">
+          <a class="handle" href="https://github.com/ammezie/openlaravel">
             <span class="icon">
               <i class="fa fa-github"></i>
             </span>
           </a>
-          <a href="https://twitter.com/openlaravel">
+          <a class="handle" href="https://twitter.com/openlaravel">
             <span class="icon">
               <i class="fa fa-twitter"></i>
             </span>

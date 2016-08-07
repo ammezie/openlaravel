@@ -1,20 +1,20 @@
 <template>
 	<div class="column is-one-third">
+	<a href="projects/{{ project.slug }}">
       <div class="card is-fullwidth">
 	    <div class="card-content has-text-centered">
 	        <div class="content">
 		        <h3 class="title">
-		        	<a href="projects/{{ project.slug }}">
-		        		{{ project.title }}
-		        	</a>
-		        </h3>
+	        		{{ project.title }}
+	        	</h3>
 
-		        <a href="projects/{{ project.slug }}">
-	          		{{ project.description }}
-	          	</a>
-          </div>
+	        	<div class="description">
+	        		{{ project.description }}
+	        	</div>
+      		</div>
 	    </div>
       </div>
+      </a>
     </div>
 </template>
 

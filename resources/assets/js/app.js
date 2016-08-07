@@ -94,6 +94,11 @@ new Vue({
 				});
 		},
 
+		// getProject(slug) {
+		// 	this.$http.get('api/projects/', slug);
+
+		// },
+
 		// makePagination(data) {
 		// 	let pagination = {
 		// 		current_page: data.current_page,
