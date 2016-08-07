@@ -5,7 +5,7 @@
 <div class="columns">
 	<div class="column is-8 is-offset-2">
 		@include('includes.flash')
-		<div class="notification is-success" v-show="formSubmitted">
+		<div class="notification is-success" v-if="formSubmitted">
 	        Your submission has been made! Please give us some time to review your submission.
 	    </div>
 
