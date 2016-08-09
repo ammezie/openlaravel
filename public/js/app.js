@@ -12730,6 +12730,7 @@ new _vue2.default({
 			title: '',
 			url: '',
 			repo_url: '',
+			short: '',
 			description: ''
 		},
 
@@ -12803,6 +12804,7 @@ new _vue2.default({
 				title: '',
 				projectUrl: '',
 				repoUrl: '',
+				short: '',
 				description: ''
 			};
 

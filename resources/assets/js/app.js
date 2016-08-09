@@ -33,6 +33,7 @@ new Vue({
 			title: '',
 			url: '',
 			repo_url: '',
+			short: '',
 			description: ''
 		},
 
@@ -89,9 +90,9 @@ new Vue({
 			page_url = page_url || '/api/projects';
 
 			this.$http.get(page_url).then(function(response) {
-					this.$set('projects', response.data);
-					// this.makePagination(response.data);
-				});
+				this.$set('projects', response.data);
+				// this.makePagination(response.data);
+			});
 		},
 
 		// getProject(slug) {
@@ -119,6 +120,7 @@ new Vue({
 				title: '',
 				projectUrl: '',
 				repoUrl: '',
+				short: '',
 				description: ''
 			};
 

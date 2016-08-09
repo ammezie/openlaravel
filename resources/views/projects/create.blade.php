@@ -29,6 +29,26 @@
 	  			</form-error>
 			</p>
 
+			<label class="label" for="short">
+				Short Description <span class="required">*</span>
+			</label>
+			<p class="control">
+	  			<input
+	  				class="input@{{ errors.short ? ' is-danger' : '' }}"
+	  				type="text"
+	  				name="short"
+	  				value="{{ old('short') }}"
+	  				placeholder="Open Laravel"
+	  				v-model="newProject.short">
+	  				<span class="help is-info">
+	  					One sentence description about the project.
+	  				</span>
+
+	  			<form-error v-if="errors.short" :errors="errors">
+	  				@{{ errors.short }}
+	  			</form-error>
+			</p>
+
 			<label class="label" for="url">
 				Project URL
 			</label>
@@ -72,9 +92,6 @@
 					name="description"
 	  				placeholder="A repository of open source projects built using Laravel"
 	  				v-model="newProject.description">{{ old('description') }}</textarea>
-	  				<span class="help is-info">
-	  					One sentence description about the project.
-	  				</span>
 
 	  			<form-error v-if="errors.description" :errors="errors">
 	  				@{{ errors.description }}
