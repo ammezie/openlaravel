@@ -9,7 +9,7 @@
 	        	</h3>
 
 	        	<div class="description">
-	        		{{ project.description }}
+	        		{{ project.short }}
 	        	</div>
       		</div>
 	    </div>
