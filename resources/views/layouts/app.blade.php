@@ -74,7 +74,10 @@
           </a>
         </p>
         <p>
-          <a href="https://github.com/ammezie/openlaravel">OpenLaravel</a> itself is an open source project built using <a href="https://laravel.com">Laravel</a>. Pull requests are greatly welcomed!
+          <a href="{{ url('/contact') }}">Contact</a>
+        </p>
+        <p>
+          <a href="https://github.com/ammezie/openlaravel">Open Laravel</a> itself is an open source project built using <a href="https://laravel.com">Laravel</a>. Pull requests are greatly welcomed!
         </p>
         <p>
           Proudly hosted with <a href="https://m.do.co/c/98e35d32e849">DigitalOcean</a>.

@@ -16,6 +16,7 @@ $this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
 $this->post('password/reset', 'Auth\PasswordController@reset');
 
 Route::get('/', 'ProjectsController@index');
+Route::get('contact', 'PageController@contact');
 
 Route::get('submit-project', 'ProjectsController@create');
 Route::get('projects/{slug}', 'ProjectsController@show');
