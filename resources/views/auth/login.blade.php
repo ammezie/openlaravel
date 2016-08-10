@@ -53,14 +53,14 @@
             </p>
 
             <p class="control">
-                <button class="button is-primary is-medium">
+                <button class="button is-primary">
                     <span class="icon">
                         <i class="fa fa-sign-in"></i>
                     </span>
                     <span>Login</span>
                 </button>
 
-                <a class="button is-medium is-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                <a class="button is-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
             </p>
         </form>
     </div>

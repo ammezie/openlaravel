@@ -82,7 +82,7 @@
             </p>
 
             <p class="control">
-                <button class="button is-primary is-medium is-fullwidth">
+                <button class="button is-primary is-fullwidth">
                     <span class="icon">
                         <i class="fa fa-btn fa-user"></i>
                     </span>

@@ -22,6 +22,8 @@ Route::get('projects/{slug}', 'ProjectsController@show');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function() {
     Route::get('/', 'AdminProjectsController@index');
+    Route::get('project/{project}/edit', ['as' => 'project.edit', 'uses' => 'AdminProjectsController@edit']);
+    Route::put('project/{project}/edit', ['as' => 'project.update', 'uses' => 'AdminProjectsController@update']);
 });
 
 /*
@@ -39,3 +41,5 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function() {
 	    Route::patch('approve-project/{slug}', 'AdminProjectsController@approveProject');
 	});
 });
+
+// Route::auth();

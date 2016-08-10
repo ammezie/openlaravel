@@ -25,6 +25,11 @@ class ProjectRepository {
 						->get();
 	}
 
+	public function getBySlug($slug)
+	{
+		return Project::where('slug', $slug)->firstOrFail();
+	}
+
 	/**
 	 * Create a new project
 	 *
@@ -33,6 +38,17 @@ class ProjectRepository {
 	public function store($project)
 	{
 		return Project::create($project);
+	}
+
+	/**
+	 * Update a project
+	 *
+	 * @param  Project $project
+	 */
+	public function update($slug, $project)
+	{
+		return Project::where('slug', $slug)
+						->update($project);
 	}
 
 	/**
