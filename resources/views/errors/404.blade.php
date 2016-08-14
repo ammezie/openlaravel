@@ -8,13 +8,12 @@
 			404 Not Found
 		</h2>
 		
-		<h4>Comments, Suggestions, Improvements? Let’s talk.</h4>
+		{{-- <h4>Comments, Suggestions, Improvements? Let’s talk.</h4> --}}
 		<p>
-			Have something to say? Feel free to reach out! You can contact me <a href="mailto:meziemichael@gmail.com">meziemichael@gmail.com</a>.
+			Woops! Looks like this page doesn't exist.
 		</p>
-		<p>
-			Thank you!
-		</p>
-
+		<a class="button is-secondary" href="{{ url('/') }}">
+			Take Me Home
+		</a>
 	</div>
 @stop
