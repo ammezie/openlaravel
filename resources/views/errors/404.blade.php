@@ -7,8 +7,6 @@
 		<h2 class="title">
 			404 Not Found
 		</h2>
-		
-		{{-- <h4>Comments, Suggestions, Improvements? Let’s talk.</h4> --}}
 		<p>
 			Woops! Looks like this page doesn't exist.
 		</p>
