@@ -12,7 +12,7 @@ class ProjectRepository {
 	 */
 	public function getAll()
 	{
-		return Project::orderBy('id', 'desc')->paginate(20);
+		return Project::orderBy('id', 'desc')->paginate(15);
 	}
 
 	/**

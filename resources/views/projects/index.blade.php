@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'A Repository Of Open Source Projects Built Using Laravel')
+
 @section('content')
 
 {{-- @include('partials.filters') --}}

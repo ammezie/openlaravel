@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A repository of open source Laravel projects.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  
-  <title>Open Laravel | A Repository Of Open Source Projects Built Using Laravel</title>
+
+  <title>Open Laravel | @yield('title')</title>
 
   <link rel="icon" type="image/png" href="{{ asset('images/favicon-32x32.png') }}" sizes="32x32">
   <link rel="icon" type="image/png" href="{{ asset('images/favicon-16x16.png') }}" sizes="16x16">
@@ -83,7 +83,6 @@
           Proudly hosted with <a href="https://m.do.co/c/98e35d32e849">DigitalOcean</a>.
         </p>
       </div>
-      
     </div>
   </footer>
   

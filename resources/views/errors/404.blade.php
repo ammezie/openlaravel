@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Contact')
+@section('title', '404 Not Found')
 
 @section('content')
-	<div class="content">
+	<div class="content has-text-centered">
 		<h2 class="title">
-			Contact
+			404 Not Found
 		</h2>
 		
 		<h4>Comments, Suggestions, Improvements? Let’s talk.</h4>

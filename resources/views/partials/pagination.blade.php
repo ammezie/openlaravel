@@ -1,4 +1,4 @@
-<section class="section">
+{{-- <section class="section">
   <nav class="pagination">
     <ul>
       <li>
@@ -24,7 +24,7 @@
       </li>
     </ul>
   </nav>
-</section>
+</section> --}}
 
 {{-- <v-paginator :resource.sync="projects" :resource_url="resource_url"></v-paginator> --}}
 {{-- <div class="pagination">
@@ -40,3 +40,5 @@
   Next
   </button>
 </div> --}}
+
+<pagination></pagination>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Submit Project')
+
 @section('content')
 
 <div class="columns">

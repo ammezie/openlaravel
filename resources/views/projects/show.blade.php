@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+	{{ $project->title }}
+@stop	 
+
 @section('content')
 
 <div class="columns">
