@@ -22,7 +22,7 @@ class ProjectRepository {
 	{
 		return Project::where('status', 1)
 						->orderBy('id', 'desc')
-						->get();
+						->paginate(15);
 	}
 
 	public function getBySlug($slug)
