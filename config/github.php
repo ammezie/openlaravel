@@ -39,7 +39,7 @@ return [
     'connections' => [
 
         'main' => [
-            'token'   => '779169c93f132b6942f8680173ad8b2ec69bb41e',
+            'token'   => env('GITHUB_TOKEN', 'token'),
             'method'  => 'token',
             'cache'   => true,
             // 'backoff' => false,
