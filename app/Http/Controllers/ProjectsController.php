@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Repositories\ProjectRepository;
+use GrahamCampbell\GitHub\GitHubManager;
 
 class ProjectsController extends Controller
 {
@@ -14,9 +15,15 @@ class ProjectsController extends Controller
 	 */
 	protected $project;
 
-	public function __construct(ProjectRepository $project)
-	{
+    /**
+     * GitHub client
+     * @var GrahamCampbell\GitHub\Facades\GitHub
+     */
+    protected $github;
 
+	public function __construct(ProjectRepository $project, GitHubManager $github)
+	{
+        $this->github = $github;
 		$this->project = $project;
 	}
 
@@ -52,6 +59,13 @@ class ProjectsController extends Controller
     {
     	$project = $this->project->show($slug);
 
-    	return view('projects.show', compact('project'));
+        $repoArray = explode('/', $project->repo_url);
+
+        $username = $repoArray[3];
+        $repo = $repoArray[4];
+
+        $repoStats = $this->github->repo()->show($username, $repo);
+
+    	return view('projects.show', compact('project', 'repoStats', 'username', 'repo'));
     }
 }

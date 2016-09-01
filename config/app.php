@@ -157,6 +157,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        GrahamCampbell\GitHub\GitHubServiceProvider::class,
+
 
     ],
 
@@ -203,6 +205,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
 
     ],
 
