@@ -28,7 +28,7 @@ and visit [http://localhost:8000/](http://localhost:8000/) to see the applicatio
 
 * Filter by stars
 * Filter by activities
-* Show project repo activity on view project page
+* ~~Show project repo activity on view project page~~
 * Add project screenshot/logo
 
 
