@@ -40,7 +40,7 @@
 	  				type="text"
 	  				name="short"
 	  				value="{{ old('short') }}"
-	  				placeholder="Open Laravel"
+	  				placeholder="A repository of open source projects built using Laravel"
 	  				v-model="newProject.short">
 	  				<span class="help is-info">
 	  					One sentence description about the project.

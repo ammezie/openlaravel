@@ -42,6 +42,7 @@
         <h2 class="subtitle">
           A repository of open source projects built using Laravel
         </h2>
+        <p class="subtitle">A total of <span style="color: #ff8717">{{ $projectsCount }}</span> projects submitted and counting!</p>
 
         <a class="button is-secondary is-medium" href="{{ url('submit-project') }}">
           Submit Project

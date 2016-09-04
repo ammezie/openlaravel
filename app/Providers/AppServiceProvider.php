@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Project;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->share('projectsCount', Project::where('status', 1)->count());
     }
 
     /**
