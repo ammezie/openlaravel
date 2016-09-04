@@ -50,15 +50,15 @@ new Vue({
 
 			this.$set('projects', project);
 
-			this.newProject = {
-				title: '',
-				projectUrl: '',
-				repoUrl: '',
-				short: '',
-				description: ''
-			};
-
 			this.$http.post('api/projects', project).then(function(response) {
+				this.newProject = {
+					title: '',
+					projectUrl: '',
+					repoUrl: '',
+					short: '',
+					description: ''
+				};
+				
 				this.formSubmitted = true;
 			}, function (response) {
 				this.$set('errors', response.data);
