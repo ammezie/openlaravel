@@ -19,6 +19,7 @@ Route::get('/', 'ProjectsController@index');
 Route::get('contact', 'PageController@contact');
 
 Route::get('submit-project', 'ProjectsController@create');
+Route::post('submit-project', 'ProjectsController@store');
 Route::get('projects/{slug}', 'ProjectsController@show');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function() {

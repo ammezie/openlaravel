@@ -12,6 +12,7 @@
     "laravel-elixir-vueify": "^1.0.3"
   },
   "dependencies": {
+    "simplemde": "^1.11.2",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3",
     "vuejs-paginator": "^1.0.14",

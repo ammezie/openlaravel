@@ -16,6 +16,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/simplemde.min.css') }}">
 </head>
 <body>
   <script>
@@ -90,5 +91,20 @@
   <!-- <script src="{{ asset('js/vendor.js') }}"></script> -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/simplemde.min.js') }}"></script>
+  <script>
+    var textarea = document.getElementById("description");
+
+    var simplemde = new SimpleMDE({
+      element: textarea,
+      forceSync: true,
+      
+    });
+
+    {{-- simplemde.codemirror.on("change", function() {
+       textarea.value = simplemde.value();
+       console.log(textarea.value);
+    }) --}}
+  </script>
 </body>
 </html>

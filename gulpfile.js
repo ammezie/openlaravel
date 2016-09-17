@@ -5,8 +5,8 @@ require('laravel-elixir-vueify');
 elixir(function(mix) {
     mix.copy('node_modules/bulma/sass', 'resources/assets/sass/bulma')
     	// .copy('node_modules/bulma/bulma.sass', 'resources/assets/sass/bulma');
-    	// .copy('node_modules/vue/dist/vue.js', 'resources/assets/js/vendor/vue.js')
-    	// .copy('node_modules/vue-resource/dist/vue-resource.js', 'resources/assets/js/vendor/vue-resource.js');
+    	.copy('node_modules/simplemde/dist/simplemde.min.css', 'public/css/simplemde.min.css')
+    	.copy('node_modules/simplemde/dist/simplemde.min.js', 'public/js/simplemde.min.js');
 
 });
 
