@@ -158,6 +158,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
+        Indal\Markdown\MarkdownServiceProvider::class,
 
 
     ],
@@ -207,6 +208,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
+        'Markdown' => Indal\Markdown\Facade::class,
 
     ],
 

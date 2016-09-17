@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "graham-campbell/github": "^4.4",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^1.1",
+        "andreasindal/laravel-markdown": "1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

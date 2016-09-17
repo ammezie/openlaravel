@@ -13,9 +13,7 @@
 				{{ $project->title }}
 			</h2>
 
-			<p>
-				{{ $project->description }}
-			</p>
+			@markdown($project->description)			
 
 			<div class="section has-text-centered">
 			@if ($project->project_url)
