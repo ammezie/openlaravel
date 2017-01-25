@@ -11,13 +11,14 @@
 |
 */
 
-$factory->define(App\Project::class, function (Faker\Generator $faker) {
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+    static $password;
+
     return [
-        'title' 		=> $faker->sentence,
-        'slug' 			=> $faker->slug,
-        'project_url' 	=> $faker->url,
-        'repo_url' 		=> $faker->url,
-        'packagist_url' => $faker->url,
-        'description' 	=> $faker->paragraph,
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
     ];
 });
