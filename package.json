@@ -8,10 +8,11 @@
   },
   "devDependencies": {
     "axios": "^0.15.2",
-    "bootstrap-sass": "^3.3.7",
+    "bulma": "^0.3.1",
     "jquery": "^3.1.0",
     "laravel-mix": "^0.5.0",
     "lodash": "^4.16.2",
+    "simplemde": "^1.11.2",
     "vue": "^2.0.1"
   }
 }

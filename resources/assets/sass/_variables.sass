@@ -1,3 +1,5 @@
+@import "node_modules/bulma/sass/utilities/functions"
+
 // 1. Initial variables
 
 // Colors
@@ -10,6 +12,10 @@ $grey-light: #d3d6db !default
 $grey-lighter: #f5f7fa !default
 $white: #fff !default
 
+// OpenLaravel custom colors
+$ol-blue: #098cd2
+$ol-orange: #ff8717
+
 $blue: #42afe3 !default
 $green: #97cd76 !default
 $orange: #f68b39 !default
@@ -20,7 +26,7 @@ $yellow: #fce473 !default
 
 // Typography
 
-$family-sans-serif: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+$family-sans-serif: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
 $family-monospace: "Source Code Pro", "Monaco", "Inconsolata", monospace !default
 
 $size-1: 48px !default
@@ -59,7 +65,9 @@ $speed: 86ms !default
 
 // 2. Primary colors
 
-$primary: $turquoise !default
+$primary: $ol-blue
+
+$secondary: $ol-orange
 
 $info: $blue !default
 $success: $green !default
@@ -76,6 +84,7 @@ $text: $grey-dark !default
 // Invert colors
 
 $primary-invert: findColorInvert($primary) !default
+$secondary-invert: findColorInvert($secondary) !default
 
 $info-invert: findColorInvert($info) !default
 $success-invert: findColorInvert($success) !default
@@ -87,9 +96,9 @@ $dark-invert: $light !default
 
 // General colors
 
-$body-background: $grey-lighter !default
+$body-background: $white
 
-$background: $grey-lighter !default
+$background: $white
 
 $border: $grey-light !default
 $border-hover: $grey !default
@@ -114,9 +123,9 @@ $link: $primary !default
 $link-invert: $primary-invert !default
 $link-visited: $purple !default
 
-$link-hover: $grey-darker !default
+$link-hover: $secondary
 $link-hover-background: $grey-lighter !default
-$link-hover-border: $grey-darker !default
+$link-hover-border: $secondary
 
 $link-active: $grey-darker !default
 $link-active-border: $grey-darker !default
@@ -148,6 +157,6 @@ $size-huge: $size-1 !default
 
 // 4. Lists and maps
 
-$colors: (white: ($white, $black), black: ($black, $white), light: ($light, $light-invert), dark: ($dark, $dark-invert), primary: ($primary, $primary-invert), info: ($info, $info-invert), success: ($success, $success-invert), warning: ($warning, $warning-invert), danger: ($danger, $danger-invert)) !default
+$colors: (white: ($white, $black), black: ($black, $white), light: ($light, $light-invert), dark: ($dark, $dark-invert), primary: ($primary, $primary-invert), secondary: ($secondary, $secondary-invert), info: ($info, $info-invert), success: ($success, $success-invert), warning: ($warning, $warning-invert), danger: ($danger, $danger-invert)) !default
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 !default

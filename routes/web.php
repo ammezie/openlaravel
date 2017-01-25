@@ -22,7 +22,7 @@ Route::get('submit-project', 'ProjectsController@create');
 Route::post('submit-project', 'ProjectsController@store');
 Route::get('projects/{slug}', 'ProjectsController@show');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function() {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', 'AdminProjectsController@index');
     Route::get('project/{project}/edit', ['as' => 'project.edit', 'uses' => 'AdminProjectsController@edit']);
     Route::put('project/{project}/edit', ['as' => 'project.update', 'uses' => 'AdminProjectsController@update']);
@@ -33,12 +33,12 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 | API Routes
 |---------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'api', 'namespace' => 'API'], function() {
+Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
     Route::get('projects', 'ProjectsController@index');
     Route::post('projects', 'ProjectsController@store');
     // Route::get('projects/{slug}', 'ProjectsController@show');
 
-    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('projects', 'AdminProjectsController@index');
         Route::patch('approve-project/{slug}', 'AdminProjectsController@approveProject');
     });
