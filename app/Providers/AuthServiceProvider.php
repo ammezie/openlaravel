@@ -22,9 +22,9 @@ class AuthServiceProvider extends ServiceProvider
      * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
      * @return void
      */
-    public function boot(GateContract $gate)
+    public function boot()
     {
-        $this->registerPolicies($gate);
+        $this->registerPolicies();
 
         //
     }

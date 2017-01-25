@@ -32,6 +32,6 @@
 	@endforeach
 </div>
 
-@include('partials.pagination', ['paginator' => $projects])
+@include('partials.pagination', ['projects' => $projects])
 
 @stop

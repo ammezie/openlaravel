@@ -4,14 +4,14 @@ namespace App\Pagination;
 
 use Illuminate\Support\HtmlString;
 use Illuminate\Pagination\UrlWindow;
-use Illuminate\Pagination\UrlWindowPresenterTrait;
+// use Illuminate\Pagination\UrlWindowPresenterTrait;
 use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
 use Illuminate\Contracts\Pagination\Presenter as PresenterContract;
-use Illuminate\Pagination\BootstrapThreeNextPreviousButtonRendererTrait;
+// use Illuminate\Pagination\BootstrapThreeNextPreviousButtonRendererTrait;
 
-class BulmaPresenter implements PresenterContract
+class BulmaPresenter
 {
-	use BootstrapThreeNextPreviousButtonRendererTrait, UrlWindowPresenterTrait;
+	// use BootstrapThreeNextPreviousButtonRendererTrait, UrlWindowPresenterTrait;
 
 	protected $paginator;
 
