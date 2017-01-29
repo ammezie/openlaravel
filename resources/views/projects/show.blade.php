@@ -53,3 +53,7 @@
 </div>
 
 @stop
+
+@push('scripts')
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+@endpush

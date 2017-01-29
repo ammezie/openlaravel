@@ -43,5 +43,3 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
         Route::patch('approve-project/{slug}', 'AdminProjectsController@approveProject');
     });
 });
-
-// Route::auth();

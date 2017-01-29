@@ -7,7 +7,7 @@
   <meta name="description" content="A repository of open source Laravel projects.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <title>Open Laravel | @yield('title')</title>
+  <title>@yield('title') | Open Laravel</title>
 
   <link rel="icon" type="image/png" href="{{ asset('images/favicon-32x32.png') }}" sizes="32x32">
   <link rel="icon" type="image/png" href="{{ asset('images/favicon-16x16.png') }}" sizes="16x16">
@@ -15,8 +15,8 @@
   <script src="https://use.fontawesome.com/bd782fff25.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/simplemde.min.css') }}">
 </head>
 <body>
   <script>
@@ -88,17 +88,11 @@
     </div>
   </footer>
   
-  <!-- <script src="{{ asset('js/vendor.js') }}"></script> -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="{{ asset('js/manifest.js') }}"></script>
+  <script src="{{ asset('js/vendor.js') }}"></script>
   <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/simplemde.min.js') }}"></script>
-  <script>
-    var textarea = document.getElementById("description");
 
-    var simplemde = new SimpleMDE({
-      element: textarea,
-      forceSync: true,  
-    });
-  </script>
+  @stack('scripts')
+
 </body>
 </html>
