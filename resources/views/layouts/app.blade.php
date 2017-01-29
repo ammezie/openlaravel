@@ -15,8 +15,10 @@
   <script src="https://use.fontawesome.com/bd782fff25.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  
+  @stack('styles')
+
 </head>
 <body>
   <script>
@@ -88,9 +90,7 @@
     </div>
   </footer>
   
-  <script src="{{ asset('js/manifest.js') }}"></script>
-  <script src="{{ asset('js/vendor.js') }}"></script>
-  <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
   @stack('scripts')
 

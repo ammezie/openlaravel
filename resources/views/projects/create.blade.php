@@ -2,8 +2,11 @@
 
 @section('title', 'Submit Project')
 
-@section('content')
+@push('styles')
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+@endpush
 
+@section('content')
 <div class="columns">
 	<div class="column is-8 is-offset-2">
 		@include('includes.flash')
@@ -111,5 +114,14 @@
 		</form>
 	</div>
 </div>
-
 @stop
+
+@push('scripts')
+	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+	<script>
+		const simplemde = new SimpleMDE({
+		  element: document.getElementById("description"),
+		  forceSync: true,
+		});
+	</script>
+@endpush
