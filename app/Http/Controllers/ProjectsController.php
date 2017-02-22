@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Repositories\ProjectRepository;
@@ -35,7 +36,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects =   $this->project->get();
+        $projects = Project::approved()->paginate(20);
 
         return view('projects.index', compact('projects'));
     }

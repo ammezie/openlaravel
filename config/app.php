@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
         Indal\Markdown\MarkdownServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
     ],
 

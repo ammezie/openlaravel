@@ -2,15 +2,29 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-	/**
-	 * Fields that are mass assignable
-	 * @var Array
-	 */
+    use Searchable;
+
+    /**
+     * Fields that are mass assignable
+     * @var Array
+    */
     protected $fillable = [
-    	'title', 'slug', 'project_url', 'repo_url', 'packagist_url', 'description', 'short'
+        'title',
+        'slug',
+        'project_url',
+        'repo_url',
+        'packagist_url',
+        'description',
+        'short'
     ];
+
+    public function scopeApproved($query)
+    {
+        return $query->where('status', 1);
+    }
 }

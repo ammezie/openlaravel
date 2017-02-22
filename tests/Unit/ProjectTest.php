@@ -8,13 +8,13 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProjectTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    /** @test */
+    public function approve_a_project()
     {
-        $this->assertTrue(true);
+        $project = new \App\Project;
+
+        
+
+        $this->assertEquals(true, $project->getApproveProjects());
     }
 }
