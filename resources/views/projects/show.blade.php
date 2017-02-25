@@ -2,7 +2,11 @@
 
 @section('title')
 	{{ $project->title }}
-@stop	 
+@stop
+
+@push('hero')
+	@include('partials.hero')
+@endpush
 
 @section('content')
 

@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title')->unique();
             $table->string('slug');
-            $table->string('project_url');
+            $table->string('project_url')->unique()->nullable();
             $table->string('repo_url')->unique();
             $table->string('packagist_url')->nullable();
             $table->text('description');

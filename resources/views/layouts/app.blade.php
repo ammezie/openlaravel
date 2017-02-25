@@ -18,9 +18,7 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   
   @stack('styles')
-
-</head>
-<body>
+  
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -29,30 +27,27 @@
 
     ga('create', 'UA-82057090-1', 'auto');
     ga('send', 'pageview');
-
-  </script>
-  <header class="header">
-    <div class="logo">
-      <a class="" href="{{ url('/') }}">
-        <img src="{{ asset('images/logo.png') }}" height="100px">
-      </a>
-    </div>
-  </header>
-
-  <section class="hero is-primary is-bold">
-    <div class="hero-body has-text-centered">
-      <div class="container">
-        <h2 class="subtitle">
-          A repository of open source projects built using Laravel
-        </h2>
-        <p class="subtitle">A total of <span style="color: #ff8717; font-weight: bold">{{ $projectsCount }}</span> projects submitted and counting!</p>
-
-        <a class="button is-secondary is-medium" href="{{ url('submit-project') }}">
-          Submit Project
+  </script>  
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item" href="{{ url('/') }}">
+          <img src="{{ asset('images/logo.png') }}" alt="Open Laravel logo">
         </a>
       </div>
+      <div class="nav-right">
+        <span class="nav-item">
+          <a class="button is-secondary is-medium" href="{{ url('submit-project') }}">
+            Submit Project
+          </a>
+        </span>
+      </div>
     </div>
-  </section>
+  </nav>
+
+  @stack('hero')
 
   <main id="project" class="section">
     <div class="container">
@@ -61,6 +56,19 @@
 
     </div>
   </main>
+
+  {{-- <section class="hero is-primary has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="subtitle is-4">
+          Get your project listed
+        </h2>
+        <a class="button is-secondary is-medium" href="{{ url('submit-project') }}">
+          Submit Project
+        </a>
+      </div>
+    </div>
+  </section> --}}
 
   <footer class="footer">
     <div class="container">
@@ -91,7 +99,28 @@
   </footer>
   
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 
+  <script>
+    var client = algoliasearch("2GYTVF3ONU", "37b9d6d0533db465aab5d9bf4a4253f2");
+    var index = client.initIndex('projects');
+    //Handle add/removing a class based on if text has been entered in the search input
+    //attach custom event handler - autocomplete:updated triggers when dataset is rendered
+    autocomplete('#aa-search-input', {}, [...]).on('autocomplete:updated', function() {
+        if (searchInput.value.length > 0) {
+            inputContainer.classList.add("input-has-value");
+        }
+        else {
+            inputContainer.classList.remove("input-has-value");
+        }
+    });
+    //Handle clearing the search input on close icon click
+    document.getElementById("icon-close").addEventListener("click", function() {
+        searchInput.value = "";
+        inputContainer.classList.remove("input-has-value");
+    });
+  </script>
   @stack('scripts')
 
 </body>

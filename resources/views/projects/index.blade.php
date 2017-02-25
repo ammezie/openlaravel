@@ -2,6 +2,10 @@
 
 @section('title', 'A Repository Of Open Source Projects Built Using Laravel')
 
+@push('hero')
+	@include('partials.hero')
+@endpush
+
 @section('content')
 
 {{-- @include('partials.filters') --}}
