@@ -20,7 +20,9 @@
   @stack('styles')
   
   <style>
-    /*@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';*/
+    span.algolia-autocomplete {
+      display: block !important;
+    }
     .aa-input-container {
       display: block;
       position: relative; }
@@ -31,8 +33,6 @@
       border-radius: 4px;
       -webkit-transition: .2s;
       transition: .2s;
-      /*font-family: "Montserrat", sans-serif;*/
-      /*box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);*/
       font-size: 11px;
       box-sizing: border-box;
       color: #333;
@@ -58,12 +58,11 @@
       color: #e4e4e4; }
     .aa-dropdown-menu {
       background-color: #fff;
-      border: 2px solid rgba(228, 228, 228, 0.6);
+      border: 1px solid rgba(228, 228, 228, 0.6);
       border-top-width: 1px;
       font-family: "Montserrat", sans-serif;
-      width: 300px;
+      width: 100%;
       margin-top: 10px;
-      box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
       font-size: 11px;
       border-radius: 4px;
       box-sizing: border-box; }
@@ -134,19 +133,6 @@
     </div>
   </main>
 
-  {{-- <section class="hero is-primary has-text-centered">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="subtitle is-4">
-          Get your project listed
-        </h2>
-        <a class="button is-secondary is-medium" href="{{ url('submit-project') }}">
-          Submit Project
-        </a>
-      </div>
-    </div>
-  </section> --}}
-
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
@@ -182,20 +168,21 @@
   <script>
     var client = algoliasearch("2GYTVF3ONU", "37b9d6d0533db465aab5d9bf4a4253f2");
     var index = client.initIndex('projects');
-    //Handle add/removing a class based on if text has been entered in the search input
-    //attach custom event handler - autocomplete:updated triggers when dataset is rendered
-    autocomplete('#aa-search-input', {}, [...]).on('autocomplete:updated', function() {
-        if (searchInput.value.length > 0) {
-            inputContainer.classList.add("input-has-value");
+    autocomplete('#aa-search-input',
+    { hint: false }, {
+        source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+        //value to be displayed in input control after user's suggestion selection
+        displayKey: 'title',
+        //hash of templates used when rendering dataset
+        templates: {
+            //'suggestion' templating function used to render a single suggestion
+            suggestion: function(suggestion) {
+              return '<span>' +
+                suggestion._highlightResult.title.value + ' - <small>' + suggestion._highlightResult.short.value + '</small>' + '</span>';
+            },
+            footer: '<div class="branding">Powered by <img src="https://www.algolia.com/assets/algolia128x40.png" /></div>'
+
         }
-        else {
-            inputContainer.classList.remove("input-has-value");
-        }
-    });
-    //Handle clearing the search input on close icon click
-    document.getElementById("icon-close").addEventListener("click", function() {
-        searchInput.value = "";
-        inputContainer.classList.remove("input-has-value");
     });
   </script>
   @stack('scripts')
