@@ -17,7 +17,7 @@
     "vue": "^2.0.1"
   },
   "dependencies": {
-    "algoliasearch": "^3.21.1",
+    "algoliasearch": "^3.22.3",
     "autocomplete.js": "^0.25.0"
   }
 }

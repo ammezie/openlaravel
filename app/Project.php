@@ -23,6 +23,12 @@ class Project extends Model
         'short'
     ];
 
+    /**
+     * Get approved projects
+     *
+     * @param  $query
+     * @return
+     */
     public function scopeApproved($query)
     {
         return $query->where('status', 1);

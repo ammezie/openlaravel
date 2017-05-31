@@ -36,7 +36,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::approved()->paginate(20);
+        $projects = Project::approved()->paginate(15);
 
         return view('projects.index', compact('projects'));
     }
@@ -63,9 +63,8 @@ class ProjectsController extends Controller
             $request,
             [
                 'title' => 'required|unique:projects,title',
-                // 'url' => 'url',
                 'repo_url' => 'required|url|unique:projects,repo_url',
-                'short' => 'required',
+                'short' => 'required|max:140',
                 'description' => 'required'
             ]
         );
