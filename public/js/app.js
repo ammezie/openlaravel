@@ -11597,7 +11597,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             displayKey: 'title',
             templates: {
                 suggestion: function suggestion(_suggestion) {
-                    return '<span>' + _suggestion._highlightResult.title.value + ' - <small>' + _suggestion._highlightResult.short.value + '</small>' + '</span>';
+                    return '<a href="/projects/' + _suggestion.slug + '"><span>' + _suggestion._highlightResult.title.value + ' - <small>' + _suggestion._highlightResult.short.value + '</small></span></a>';
                 },
                 empty: '<div class="aa-empty">No projects found</div>',
                 footer: '<div class="branding"><span class="branding__text">Powered by</span> <a href="https://www.algolia.com" target="_blank"><img src="https://www.algolia.com/assets/algolia128x40.png" /></a></div>'
