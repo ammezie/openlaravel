@@ -20,7 +20,7 @@ Route::get('submit-project', 'ProjectsController@create');
 Route::post('submit-project', 'ProjectsController@store');
 Route::get('projects/{slug}', 'ProjectsController@show');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', 'AdminProjectsController@index');
     Route::get('project/{project}/edit', ['as' => 'project.edit', 'uses' => 'AdminProjectsController@edit']);
     Route::put('project/{project}/edit', ['as' => 'project.update', 'uses' => 'AdminProjectsController@update']);

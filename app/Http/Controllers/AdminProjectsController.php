@@ -12,29 +12,29 @@ class AdminProjectsController extends Controller
     * @var app\Repositories\ProjectRepository;
     */
     protected $project;
-	
-	/**
+
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct(ProjectRepository $project)
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'admin']);
 
         $this->project = $project;
     }
 
     /**
      * Display list of projects
-     * 
+     *
      * @return Response
      */
     public function index()
     {
         $projects =  $this->project->getAll();
 
-    	return view('dashboard.projects.index', compact('projects'));
+        return view('dashboard.projects.index', compact('projects'));
     }
 
     public function edit($slug)
@@ -73,7 +73,7 @@ class AdminProjectsController extends Controller
 
     /**
      * Approve a particular project
-     * 
+     *
      * @param  $slug
      * @return Response
      */
@@ -81,6 +81,4 @@ class AdminProjectsController extends Controller
     {
         return $this->project->approve($slug);
     }
-
-
 }
