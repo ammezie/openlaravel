@@ -25,7 +25,8 @@
 	  				type="text"
 	  				name="title"
 	  				value="{{ old('title') }}"
-	  				placeholder="Open Laravel">
+	  				placeholder="Open Laravel"
+	  				required>
 
 				@if ($errors->has('title'))
 					<span class="help is-danger">
@@ -43,7 +44,8 @@
 	  				type="text"
 	  				name="short"
 	  				value="{{ old('short') }}"
-	  				placeholder="A repository of open source projects built using Laravel">
+	  				placeholder="A repository of open source projects built using Laravel"
+	  				required>
 	  				<span class="help is-info">
 	  					One sentence description about the project.
 	  				</span>
@@ -61,7 +63,7 @@
 			<p class="control">
 	  			<input
 	  				class="input {{ $errors->has('url') ? ' is-danger' : '' }}"
-	  				type="text"
+	  				type="url"
 	  				name="url"
 	  				value="{{ old('url') }}"
 	  				placeholder="http://openlaravel.com">
@@ -79,10 +81,11 @@
 			<p class="control">
 	  			<input
 	  				class="input {{ $errors->has('repo_url') ? ' is-danger' : '' }}"
-	  				type="text"
+	  				type="url"
 	  				name="repo_url"
 	  				value="{{ old('repo_url') }}"
-	  				placeholder="https://github.com/ammezie/openlaravel">
+	  				placeholder="https://github.com/ammezie/openlaravel"
+	  				required>
 
 				@if ($errors->has('repo_url'))
 					<span class="help is-danger">
