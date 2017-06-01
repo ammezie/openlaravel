@@ -6,19 +6,20 @@ use App\Project;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProjectTest extends TestCase
 {
-    use DatabaseTransactions;
+    use DatabaseMigrations;
    /** @test */
-    public function return_only_approved_projects()
+    public function users_can_view_only_approved_projects()
     {
-        factory(Project::class, 3)->create();
-        $approved = factory(Project::class)->create(['status' => 1]);
+        $projects = factory(Project::class, 3)->create();
+        $approvedProject = factory(Project::class)->create(['status' => 1]);
 
-        $projects = Project::approved();
+        $approved = Project::approved()->first();
 
-        $this->assertEquals($approved->id, $projects->first()->id);
+        $this->get('/')
+            ->assertSee($approved->title)
+            ->assertSee($approved->short);
     }
 }

@@ -20,7 +20,7 @@ class Project extends Model
         'repo_url',
         'packagist_url',
         'description',
-        'short'
+        'short',
     ];
 
     /**

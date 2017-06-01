@@ -11,10 +11,8 @@ class ProjectTest extends TestCase
     /** @test */
     public function approve_a_project()
     {
-        $project = new \App\Project;
-
-        
-
-        $this->assertEquals(true, $project->getApproveProjects());
+        // Given
+        // When
+        // Then
     }
 }
