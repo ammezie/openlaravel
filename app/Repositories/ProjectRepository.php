@@ -60,9 +60,26 @@ class ProjectRepository
         return Project::where('slug', $slug)->firstOrFail();
     }
 
+    /**
+     * Approve a specified project
+     *
+     * @param string $slug
+     * @return Collection
+     */
     public function approve($slug)
     {
         return Project::where('slug', $slug)
                         ->update(['status' => 1]);
+    }
+
+    /**
+     * Delete a specified project
+     *
+     * @param  Project $project
+     * @return
+     */
+    public function delete($project)
+    {
+        return Project::destroy($project);
     }
 }

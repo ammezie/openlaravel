@@ -1,7 +1,11 @@
 @extends('layouts.dashboard')
 
+@push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+@endpush
+
 @section('content')
-<div class="row">
+    <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Project</div>
@@ -80,11 +84,10 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-thumbs-o-up"></i> Update
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-btn fa-thumbs-o-up"></i> Approve
+                            </button>
+                            <a class="btn btn-default" href="{{ url('/dashboard') }}">Cancel</a>
                         </div>
                     </form>
                 </div>
@@ -92,3 +95,12 @@
         </div>
     </div>
 @stop
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+        var simplemde = new SimpleMDE({
+            element: document.getElementById("description")
+        });
+    </script>
+@endpush

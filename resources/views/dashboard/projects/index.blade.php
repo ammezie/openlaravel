@@ -21,16 +21,16 @@
 		   		<td>Repo URL</td>
 		   		<td>Short Desc</td>
 		   		<td>Status</td>
-		   		<td></td>
+		   		<td colspan="2">Actions</td>
 		   	</tr>
 		   </thead>
 		   <tbody>
 	   		@foreach ($projects as $project)
 	   			<tr>
 					<td>
-						{{-- <a href="{{ url('projects/' . $project->slug) }}"> --}}
+						<a href="{{ url('projects/' . $project->slug) }}" target="_blank">
 							{{ $project->title }}
-						{{-- </a> --}}
+						</a>
 					</td>
 					<td>{{ $project->project_url }}</td>
 					<td>{{ $project->repo_url }}</td>
@@ -39,6 +39,18 @@
 					<td>
 						<a class="btn btn-primary" href="{{ route('project.edit', $project->slug) }}">
 	                        <i class="fa fa-thumbs-o-up"></i> 
+	                    </a>
+					</td>
+					<td>
+						{{-- <a class="delete-item" href="{{ route('delete-ad', $ad->id) }}" data-toggle="tooltip" data-placement="top" title="Delete Ad" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?">
+						    <i class="fa fa-trash"></i>                                                
+						</a> --}}
+						<a class="btn btn-danger"
+							href="{{ route('delete', $project->id) }}"
+							data-method="delete"
+							data-token="{{ csrf_token() }}"
+							data-confirm="Are you sure?">
+	                        <i class="fa fa-trash-o"></i> 
 	                    </a>
 					</td>
 				</tr>
@@ -50,3 +62,7 @@
   	</div>
 </div>
 @stop
+
+@push('scripts')
+    <script src="{{ asset('js/laravel.js') }}"></script>
+@endpush

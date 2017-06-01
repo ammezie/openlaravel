@@ -81,4 +81,17 @@ class AdminProjectsController extends Controller
     {
         return $this->project->approve($slug);
     }
+
+    /**
+     * Delete a specified project
+     *
+     * @param integer $project
+     * @return
+     */
+    public function destroy($project)
+    {
+        $this->project->delete($project);
+
+        return back()->with("status", "Project Deleted");
+    }
 }

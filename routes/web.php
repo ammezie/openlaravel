@@ -26,7 +26,8 @@ Route::get('projects/{slug}', 'ProjectsController@show');
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', 'AdminProjectsController@index');
     Route::get('project/{project}/edit', ['as' => 'project.edit', 'uses' => 'AdminProjectsController@edit']);
-    Route::put('project/{project}/edit', ['as' => 'project.update', 'uses' => 'AdminProjectsController@update']);
+    Route::patch('project/{project}/edit', ['as' => 'project.update', 'uses' => 'AdminProjectsController@update']);
+    Route::delete('/delete/{project}', 'AdminProjectsController@destroy')->name('delete');
 });
 
 /*
