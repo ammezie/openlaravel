@@ -12,10 +12,10 @@
 
                 <div class="panel-body">
                     <form class="form" method="POST" action="{{ route('project.update', $project->slug) }}">
-                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_method" value="PATCH">
                         {!! csrf_field() !!}
 
-                       {{--  <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title">Title</label>
 
                             <input id="title" type="text" class="form-control" name="title" value="{{ $project->title }}">
@@ -25,7 +25,7 @@
                                     <strong>{{ $errors->first('title') }}</strong>
                                 </span>
                             @endif
-                        </div> --}}
+                        </div>
 
                         <div class="form-group{{ $errors->has('short') ? ' has-error' : '' }}">
                             <label for="short">Short Description</label>
@@ -39,7 +39,7 @@
                             @endif
                         </div>
 
-                        {{-- <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url">Project URL</label>
 
                             <input id="url" type="text" class="form-control" name="url" value="{{ $project->project_url }}">
@@ -49,19 +49,19 @@
                                     <strong>{{ $errors->first('url') }}</strong>
                                 </span>
                             @endif
-                        </div> --}}
+                        </div>
 
-                        {{-- <div class="form-group{{ $errors->has('repo') ? ' has-error' : '' }}">
-                            <label for="repo">Repository URL</label>
+                        <div class="form-group{{ $errors->has('repo_url') ? ' has-error' : '' }}">
+                            <label for="repo_url">Repository URL</label>
 
-                            <input id="repo" type="text" class="form-control" name="repo" value="{{ $project->repo_url }}">
+                            <input id="repo_url" type="text" class="form-control" name="repo_url" value="{{ $project->repo_url }}">
 
-                            @if ($errors->has('repo'))
+                            @if ($errors->has('repo_url'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('repo') }}</strong>
+                                    <strong>{{ $errors->first('repo_url') }}</strong>
                                 </span>
                             @endif
-                        </div> --}}
+                        </div>
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="description">description</label>

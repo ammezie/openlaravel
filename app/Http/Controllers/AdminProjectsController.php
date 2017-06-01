@@ -49,21 +49,20 @@ class AdminProjectsController extends Controller
         $project = $this->project->getBySlug($slug);
 
         $this->validate($request, [
-            // 'title'         => 'required|unique:projects,title,'.$project->id,
-            // 'url'           => 'url',
-            // 'repo_url'      => 'required|url|unique:projects,repo_url,'.$project->id,
-            'short'         => 'required',
-            'description'   => 'required'
+            'title' => 'required|unique:projects,title',
+            'repo_url' => 'required|url|unique:projects,repo_url',
+            'short' => 'required|max:140',
+            'description' => 'required'
         ]);
 
         $project = [
-            // 'title'         => $request->input('title'),
-            // 'slug'          => str_slug($request->input('title')),
-            // 'project_url'   => $request->input('url'),
-            // 'repo_url'      => $request->input('repo_url'),
-            'short'         => $request->input('short'),
-            'description'   => $request->input('description'),
-            'status'        => $request->input('approve'),
+            'title' => $request->title,
+            'slug' => str_slug($request->title),
+            'project_url' => $request->url,
+            'repo_url' => $request->repo_url,
+            'short' => $request->short,
+            'description' => $request->description,
+            'status' => $request->approve,
         ];
 
         $this->project->update($slug, $project);

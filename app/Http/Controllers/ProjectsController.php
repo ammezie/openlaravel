@@ -59,23 +59,20 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
-                'title' => 'required|unique:projects,title',
-                'repo_url' => 'required|url|unique:projects,repo_url',
-                'short' => 'required|max:140',
-                'description' => 'required'
-            ]
-        );
+        $this->validate($request, [
+            'title' => 'required|unique:projects,title',
+            'repo_url' => 'required|url|unique:projects,repo_url',
+            'short' => 'required|max:140',
+            'description' => 'required'
+        ]);
 
         $project = [
-        'title' => $request->input('title'),
-        'slug' => str_slug($request->input('title')),
-        'project_url' => $request->input('url'),
-        'repo_url' => $request->input('repo_url'),
-        'short' => $request->input('short'),
-        'description' => $request->input('description')
+            'title' => $request->input('title'),
+            'slug' => str_slug($request->input('title')),
+            'project_url' => $request->input('url'),
+            'repo_url' => $request->input('repo_url'),
+            'short' => $request->input('short'),
+            'description' => $request->input('description')
         ];
 
         $this->project->store($project);

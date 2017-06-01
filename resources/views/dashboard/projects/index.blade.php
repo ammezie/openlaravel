@@ -42,9 +42,6 @@
 	                    </a>
 					</td>
 					<td>
-						{{-- <a class="delete-item" href="{{ route('delete-ad', $ad->id) }}" data-toggle="tooltip" data-placement="top" title="Delete Ad" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?">
-						    <i class="fa fa-trash"></i>                                                
-						</a> --}}
 						<a class="btn btn-danger"
 							href="{{ route('delete', $project->id) }}"
 							data-method="delete"
