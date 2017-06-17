@@ -35,6 +35,8 @@
 	@endforeach
 </div>
 
-@include('partials.pagination', ['projects' => $projects])
+<section class="section">
+    {{ $projects->links() }}
+</section>
 
 @stop
