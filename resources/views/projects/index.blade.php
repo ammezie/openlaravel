@@ -30,7 +30,7 @@
 </div>
 
 <section class="section">
-    {{ $projects->links() }}
+    {{ $projects->links('partials.pagination') }}
 </section>
 
 @stop
