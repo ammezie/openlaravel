@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Repositories\ProjectRepository;
 
 class AdminProjectsController extends Controller
@@ -49,8 +50,15 @@ class AdminProjectsController extends Controller
         $project = $this->project->getBySlug($slug);
 
         $this->validate($request, [
-            'title' => 'required|unique:projects,title',
-            'repo_url' => 'required|url|unique:projects,repo_url',
+            'title' => [
+                'required',
+                Rule::unique('projects')->ignore($project->id),
+            ],
+            'repo_url' => [
+                'required',
+                'url',
+                Rule::unique('projects')->ignore($project->id),
+            ],
             'short' => 'required|max:140',
             'description' => 'required'
         ]);
