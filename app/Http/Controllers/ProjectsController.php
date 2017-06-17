@@ -36,7 +36,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::approved()->paginate(15);
+        $projects = Project::approved()->latest()->paginate(15);
 
         return view('projects.index', compact('projects'));
     }
