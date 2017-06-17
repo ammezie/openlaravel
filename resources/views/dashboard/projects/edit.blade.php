@@ -12,13 +12,13 @@
 
                 <div class="panel-body">
                     <form class="form" method="POST" action="{{ route('project.update', $project->slug) }}">
-                        <input type="hidden" name="_method" value="PATCH">
+                        {{ method_field("PATCH") }}
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title">Title</label>
 
-                            <input id="title" type="text" class="form-control" name="title" value="{{ $project->title }}">
+                            <input id="title" type="text" class="form-control" name="title" value="{{ old('title', $project->title) }}">
 
                             @if ($errors->has('title'))
                                 <span class="help-block">
@@ -30,7 +30,7 @@
                         <div class="form-group{{ $errors->has('short') ? ' has-error' : '' }}">
                             <label for="short">Short Description</label>
 
-                            <input id="short" type="text" class="form-control" name="short" value="{{ $project->short }}">
+                            <input id="short" type="text" class="form-control" name="short" value="{{ old('short', $project->short) }}">
 
                             @if ($errors->has('short'))
                                 <span class="help-block">
@@ -42,7 +42,7 @@
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url">Project URL</label>
 
-                            <input id="url" type="text" class="form-control" name="url" value="{{ $project->project_url }}">
+                            <input id="url" type="text" class="form-control" name="url" value="{{ old('url', $project->project_url) }}">
 
                             @if ($errors->has('url'))
                                 <span class="help-block">
@@ -54,7 +54,7 @@
                         <div class="form-group{{ $errors->has('repo_url') ? ' has-error' : '' }}">
                             <label for="repo_url">Repository URL</label>
 
-                            <input id="repo_url" type="text" class="form-control" name="repo_url" value="{{ $project->repo_url }}">
+                            <input id="repo_url" type="text" class="form-control" name="repo_url" value="{{ old('repo_url', $project->repo_url) }}">
 
                             @if ($errors->has('repo_url'))
                                 <span class="help-block">
@@ -65,7 +65,7 @@
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="description">description</label>
-                            <textarea rows="10" id="description" class="form-control" name="description">{{ $project->description }}</textarea>
+                            <textarea rows="10" id="description" class="form-control" name="description">{{ old('description', $project->description) }}</textarea>
 
                             @if ($errors->has('description'))
                                 <span class="help-block">
