@@ -9,4 +9,3 @@ php artisan optimize
 php artisan config:cache
 
 npm install
-npm run production
