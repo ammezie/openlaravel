@@ -8,13 +8,7 @@
 
 @section('content')
 
-{{-- @include('partials.filters') --}}
-
 <div class="columns is-multiline">
-	{{-- <project
-		v-for="project in projects"
-		:project="project">
-	</project> --}}
 	@foreach ($projects as $project)
 		<div class="column is-one-third">
 			<a href="{{ url('projects/'. $project->slug) }}">
