@@ -12,7 +12,7 @@ If you use https, use this instead
 
 `git clone https://github.com/ammezie/openlaravel.git`
 
-## Setting Up
+## Getting Started
 
 `cd` into the project directory and run:
 
@@ -20,11 +20,31 @@ If you use https, use this instead
 
 Duplicate `.env.example` and rename it `.env`
 
-Then run:
+Run:
 
 `php artisan key:generate`
 
-Setup your database then run:
+Then run
+
+`npm install`
+
+## Setup Algolia
+
+Create a free Algolia account at [https://www.algolia.com/users/sign_up](https://www.algolia.com/users/sign_up) then fill in your Algolia API Keys in your `.env` file:
+
+```
+ALGOLIA_APP_ID=xxxxxxxxxx
+ALGOLIA_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ALGOLIA_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Then run:
+
+`npm run dev`
+
+## Database Migrations
+
+Be sure to fill in your database details in your `.env` file before running the migrations:
 
 `php artisan migrate`
 
