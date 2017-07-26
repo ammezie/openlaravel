@@ -38,6 +38,13 @@ ALGOLIA_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ALGOLIA_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+## Setup GitHub
+Create a GitHub personal access token at [https://github.com/settings/tokens](https://github.com/settings/tokens) with the following scopes unders `repo:status` and `public_repo` then fill in the generated token in your `.env` file:
+
+```
+GITHUB_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
 Then run:
 
 `npm run dev`
