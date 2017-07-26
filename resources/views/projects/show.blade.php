@@ -43,11 +43,29 @@
 			</p>
 
 			<p>
-				<a class="github-button" href="{{ url($project->repo_url) }}" data-icon="octicon-star" data-count-href="/{{ $username }}/{{ $repo }}/stargazers" data-count-api="/repos/{{ $username }}/{{ $repo }}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star {{ $username }}/{{ $repo }} on GitHub">Star</a>
+				<a class="github-button"
+					href="{{ url($project->repo_url) }}"
+					data-icon="octicon-star"
+					data-show-count="true"
+					data-count-aria-label="# stargazers on GitHub"
+					aria-label="Star {{ $username }}/{{ $repo }} on GitHub">
+				Star</a>
 
-				<a class="github-button" href="{{ url($project->repo_url) }}/fork" data-icon="octicon-repo-forked" data-count-href="/{{ $username }}/{{ $repo }}/network" data-count-api="/repos/{{ $username }}/{{ $repo }}#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork {{ $username }}/{{ $repo }} on GitHub">Fork</a>
+				<a class="github-button"
+					href="{{ url($project->repo_url) }}/fork"
+					data-icon="octicon-repo-forked"
+					data-show-count="true"
+					data-count-aria-label="# forks on GitHub"
+					aria-label="Fork {{ $username }}/{{ $repo }} on GitHub">
+				Fork</a>
 
-				<a class="github-button" href="{{ url($project->repo_url) }}/issues" data-icon="octicon-issue-opened" data-count-api="/repos/{{ $username }}/{{ $repo }}#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue {{ $username }}/{{ $repo }} on GitHub">Issue</a>
+				<a class="github-button"
+					href="{{ url($project->repo_url) }}/issues"
+					data-icon="octicon-issue-opened"
+					data-show-count="true"
+					data-count-aria-label="# issues on GitHub"
+					aria-label="Issue {{ $username }}/{{ $repo }} on GitHub">
+				Issue</a>
 			</p>
 
 			<p>
