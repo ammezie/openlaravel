@@ -88,10 +88,7 @@ class AdminProjectsController extends Controller
 
         $this->project->update($slug, $project);
 
-        // Tweet about the project
-        $this->tweetProject($project);
-
-        return redirect('dashboard')->with("status", "Project Approved");
+        return redirect('dashboard')->with("status", "Project Updated!");
     }
 
     /**
@@ -102,7 +99,12 @@ class AdminProjectsController extends Controller
      */
     public function approveProject($slug)
     {
-        return $this->project->approve($slug);
+        $project = $this->project->approve($slug);
+
+        // Tweet about the project
+        $this->tweetProject($project);
+
+        return back()->with("status", "Project Approved!");
     }
 
     /**
@@ -115,7 +117,7 @@ class AdminProjectsController extends Controller
     {
         $this->project->delete($project);
 
-        return back()->with("status", "Project Deleted");
+        return back()->with("status", "Project Deleted!");
     }
 
     /**
