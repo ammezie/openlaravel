@@ -24,9 +24,26 @@ class ProjectRepository
                         ->paginate(15);
     }
 
+    /**
+     * Find a project by it slug
+     *
+     * @param string $slug
+     * @return void
+     */
     public function getBySlug($slug)
     {
         return Project::where('slug', $slug)->firstOrFail();
+    }
+
+    /**
+     * Find a project by it primary key
+     *
+     * @param integer $id
+     * @return Collection
+     */
+    public function findById($id)
+    {
+        return Project::findOrFail($id);
     }
 
     /**
@@ -63,12 +80,12 @@ class ProjectRepository
     /**
      * Approve a specified project
      *
-     * @param string $slug
+     * @param integer $id
      * @return Collection
      */
-    public function approve($slug)
+    public function approve($id)
     {
-        return Project::where('slug', $slug)
+        return Project::where('id', $id)
                         ->update(['status' => 1]);
     }
 

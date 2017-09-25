@@ -94,12 +94,15 @@ class AdminProjectsController extends Controller
     /**
      * Approve a particular project
      *
-     * @param  $slug
+     * @param  integer $id
      * @return Response
      */
-    public function approveProject($slug)
+    public function approveProject($id)
     {
-        $project = $this->project->approve($slug);
+        $project = $this->project->findById($id);
+
+        $project->status = 1;
+        $project->save();
 
         // Tweet about the project
         $this->tweetProject($project);
