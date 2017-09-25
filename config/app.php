@@ -179,6 +179,7 @@ return [
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
         Indal\Markdown\MarkdownServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
+        Thujohn\Twitter\TwitterServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
         'Markdown' => Indal\Markdown\Facade::class,
+        'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
 
     ],
 

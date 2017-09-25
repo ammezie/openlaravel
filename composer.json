@@ -12,7 +12,8 @@
         "laravel/framework": "5.4.*",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
-        "php-http/guzzle6-adapter": "^1.1"
+        "php-http/guzzle6-adapter": "^1.1",
+        "thujohn/twitter": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

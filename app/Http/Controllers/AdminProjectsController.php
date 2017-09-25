@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Repositories\ProjectRepository;
+use Thujohn\Twitter\Facades\Twitter;
 
 class AdminProjectsController extends Controller
 {
@@ -38,6 +39,12 @@ class AdminProjectsController extends Controller
         return view('dashboard.projects.index', compact('projects'));
     }
 
+    /**
+     * Show form for editing a particular project
+     *
+     * @param string $slug
+     * @return Resposne
+     */
     public function edit($slug)
     {
         $project = $this->project->getBySlug($slug);
@@ -45,6 +52,13 @@ class AdminProjectsController extends Controller
         return view('dashboard.projects.edit', compact('project'));
     }
 
+    /**
+     * Update/approve a particular project
+     *
+     * @param string $slug
+     * @param Request $request
+     * @return Response
+     */
     public function update($slug, Request $request)
     {
         $project = $this->project->getBySlug($slug);
@@ -75,6 +89,9 @@ class AdminProjectsController extends Controller
 
         $this->project->update($slug, $project);
 
+        // Tweet about the project
+        $this->tweetProject($project);
+
         return redirect('dashboard')->with("status", "Project Approved");
     }
 
@@ -100,5 +117,24 @@ class AdminProjectsController extends Controller
         $this->project->delete($project);
 
         return back()->with("status", "Project Deleted");
+    }
+
+    /**
+     * Tweet about project
+     *
+     * @param Project $project
+     * @return void
+     */
+    protected function tweetProject($project)
+    {
+        $status = $project->title . ' ' . $project->repo_url;
+
+        // Build tweet
+        $tweet = [
+            'status' => $status,
+            'format' => 'json'
+        ];
+
+        Twitter::postTweet($tweet);
     }
 }
