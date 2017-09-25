@@ -16,7 +16,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  
+
   @stack('styles')
 
   <script>
@@ -27,6 +27,14 @@
 
     ga('create', 'UA-82057090-1', 'auto');
     ga('send', 'pageview');
+  </script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2211151329646798",
+      enable_page_level_ads: true
+    });
   </script>
 </head>
 <body>
@@ -84,7 +92,7 @@
       </div>
     </footer>
   </div>
-  
+
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
 
