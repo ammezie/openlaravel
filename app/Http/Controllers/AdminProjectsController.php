@@ -84,7 +84,6 @@ class AdminProjectsController extends Controller
             'repo_url' => $request->repo_url,
             'short' => $request->short,
             'description' => $request->description,
-            'status' => $request->approve,
         ];
 
         $this->project->update($slug, $project);

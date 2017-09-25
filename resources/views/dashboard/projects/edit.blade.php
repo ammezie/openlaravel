@@ -75,18 +75,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Approve</label>
-                            <select class="form-control" name="approve">
-                                <option value=""></option>
-                                <option value="0">No</option>
-                                <option value="1">Yes</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa fa-btn fa-thumbs-o-up"></i> Approve
-                            </button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                             <a class="btn btn-default" href="{{ url('/dashboard') }}">Cancel</a>
                         </div>
                     </form>

@@ -12,7 +12,7 @@
                 {{ session('status') }}
             </div>
         @endif
-        
+
     	<table class="table">
 		   <thead>
 		   	<tr>
@@ -21,7 +21,7 @@
 		   		<td>Repo URL</td>
 		   		<td>Short Desc</td>
 		   		<td>Status</td>
-		   		<td colspan="2">Actions</td>
+		   		<td colspan="3"></td>
 		   	</tr>
 		   </thead>
 		   <tbody>
@@ -37,17 +37,26 @@
 					<td>{{ $project->short }}</td>
 					<td>{{ $project->status }}</td>
 					<td>
+						<a class="btn btn-success"
+							href="{{ route('project.approve', $project->id) }}"
+							data-method="patch"
+							data-token="{{ csrf_token() }}"
+							data-confirm="Are you sure?">
+	                        <i class="fa fa-thumbs-o-up"></i>
+	                    </a>
+					</td>
+					<td>
 						<a class="btn btn-primary" href="{{ route('project.edit', $project->slug) }}">
-	                        <i class="fa fa-thumbs-o-up"></i> 
+	                        <i class="fa fa-pencil-square-o"></i>
 	                    </a>
 					</td>
 					<td>
 						<a class="btn btn-danger"
-							href="{{ route('delete', $project->id) }}"
+							href="{{ route('project.delete', $project->id) }}"
 							data-method="delete"
 							data-token="{{ csrf_token() }}"
 							data-confirm="Are you sure?">
-	                        <i class="fa fa-trash-o"></i> 
+	                        <i class="fa fa-trash-o"></i>
 	                    </a>
 					</td>
 				</tr>
