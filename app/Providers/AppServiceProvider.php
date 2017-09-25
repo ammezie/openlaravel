@@ -16,6 +16,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        \View::share('projectsCount', \App\Project::where('status', 1)->count());
     }
 
     /**
