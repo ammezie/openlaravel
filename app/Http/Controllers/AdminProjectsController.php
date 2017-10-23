@@ -131,7 +131,7 @@ class AdminProjectsController extends Controller
      */
     protected function tweetProject($project)
     {
-        $status = $project->title . ' - ' . $project->short . $project->repo_url;
+        $status = $project->title . ' - ' . $project->short . ' ' . $project->repo_url;
 
         // Build tweet
         $tweet = [
