@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Project;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        \View::share('projectsCount', \App\Project::where('status', 1)->count());
+        view()->composer('*', function ($view) {
+            $view->with('projectsCount', Project::where('status', 1)->count());
+        });
     }
 
     /**
