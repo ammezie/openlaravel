@@ -1,7 +1,13 @@
 <?php
 
-return [
+$url = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
+$host = $url['host'];
+$username = $url['user'];
+$password = $url['pass'];
+$database = substr($url['path'], 1);
+
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -32,7 +38,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
@@ -42,10 +47,10 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', $host),
+            'database' => env('DB_DATABASE', $database),
+            'username' => env('DB_USERNAME', $username),
+            'password' => env('DB_PASSWORD', $password),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -65,7 +70,6 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
     ],
 
     /*
@@ -93,7 +97,6 @@ return [
     */
 
     'redis' => [
-
         'client' => 'predis',
 
         'default' => [
@@ -102,7 +105,5 @@ return [
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
         ],
-
     ],
-
 ];
