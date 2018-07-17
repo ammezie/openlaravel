@@ -9,13 +9,13 @@
 
   <title>@yield('title') | Open Laravel</title>
 
-  <link rel="icon" type="image/png" href="{{ asset('images/favicon-32x32.png') }}" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{ asset('images/favicon-16x16.png') }}" sizes="16x16">
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
 
   <script src="https://use.fontawesome.com/bd782fff25.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="/css/app.css">
 
   @stack('styles')
 
@@ -43,7 +43,7 @@
       <div class="container">
         <div class="nav-left">
           <a class="nav-item" href="{{ url('/') }}">
-            <img src="{{ asset('images/logo.png') }}" alt="Open Laravel logo">
+            <img src="/images/logo.png" alt="Open Laravel logo">
           </a>
         </div>
         <div class="nav-right">
@@ -93,7 +93,7 @@
     </footer>
   </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/app.js"></script>
     @stack('scripts')
 
 </body>
